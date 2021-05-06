@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Host:                         localhost
--- Server version:               10.4.17-MariaDB - mariadb.org binary distribution
+-- Server version:               5.7.24 - MySQL Community Server (GPL)
 -- Server OS:                    Win64
 -- HeidiSQL Version:             10.2.0.5599
 -- --------------------------------------------------------
