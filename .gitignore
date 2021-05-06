@@ -1,4 +1,4 @@
-
+/vendor
 /storage/*.key
 .phpunit.result.cache
 Homestead.json
