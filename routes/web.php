@@ -24,3 +24,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Customer Route
+//get ('path')
+Route::get('/customers/homepage','CustomerController@create')->name('customer:homepage');
+
+
+//Runner Route
+Route::get('/runners/homepage','RunnerController@create')->name('runner:homepage');
+
+
+//Staff Route
+Route::get('/staffs/homepage','StaffController@create')->name('staff:homepage');
