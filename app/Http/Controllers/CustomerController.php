@@ -26,6 +26,7 @@ class CustomerController extends Controller
     {
         //Display  homepage interfaces
         return view('registration.customerHomepage'); //customerHomepage.blade.php
+        return view ('services.create');
     }
 
     /**
