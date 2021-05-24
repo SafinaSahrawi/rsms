@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class RunnerController extends Controller
+class RiderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,8 +24,8 @@ class RunnerController extends Controller
      */
     public function create()
     {
-        //Display runner homepage
-        return view('runners.homepage'); //homepage.blade.php
+        //Display riderHomepage
+        return view('registration.riderHomepage'); //riderHomepage.blade.php
     }
 
     /**

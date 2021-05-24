@@ -28,16 +28,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Customer Route
 //get ('path')
 
+// customerHomepage Display
+Route::get('/registration/customerHomepage','CustomerController@create')->name('registration:customerHomepage');
 
-Route::get('/customers/homepage','CustomerController@create')->name('customer:homepage');
-
-
-//Runner Route
-Route::get('/runners/homepage','RunnerController@create')->name('runner:homepage');
-
-
-//Staff Route
-Route::get('/staffs/homepage','StaffController@create')->name('staff:homepage');
+// riderHomepage Display
+Route::get('/registration/riderHomepage','RiderController@create')->name('registration:riderHomepage');
 
 //service module
 Route::resource('services','ServiceController');
