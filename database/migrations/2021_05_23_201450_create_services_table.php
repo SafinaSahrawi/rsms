@@ -20,7 +20,7 @@ class CreateServicesTable extends Migration
             $table->string('serialNo');
             $table->string('faulty');
             $table->double('cost');
-            $table->string('status');
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }
