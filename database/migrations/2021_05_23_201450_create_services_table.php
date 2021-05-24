@@ -14,15 +14,14 @@ class CreateServicesTable extends Migration
     public function up()
     {
         Schema::create('services', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('deviceType');
             $table->string('brand');
             $table->string('serialNo');
-            $table->text('faulty');
+            $table->string('faulty');
             $table->double('cost');
             $table->string('status');
-            $table->timestamp('created_at')->date_create();
-            $table->timestamp('failed_at')->useCurrent();
+            $table->timestamps();
         });
     }
 
