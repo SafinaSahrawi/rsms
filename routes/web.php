@@ -36,3 +36,11 @@ Route::get('/registration/riderHomepage','RiderController@create')->name('regist
 
 //service module
 Route::resource('services','ServiceController');
+
+Route::get('riderhome', function () {
+    return view('riderHomepage');
+})->middleware('auth', 'checkuser:runner@customer.com');
+
+Route::get('customerHome', function () {
+    return view('customerHome');
+})->middleware('auth', 'checkuser:customer@customer.com');
