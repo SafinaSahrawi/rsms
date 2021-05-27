@@ -15,8 +15,9 @@ class ServiceController extends Controller
     public function index()
     {
         //services/index
+
         $services  = Service::all()->toArray();
-        return view ('services.index', compact('services'));
+        return view ('services.custIndex', compact('services'));
     }
 
     /**
@@ -27,7 +28,7 @@ class ServiceController extends Controller
     public function create()
     {
         //display form
-        return view ('services.create');
+        return view ('services.createService');
     }
 
     /**
@@ -40,6 +41,8 @@ class ServiceController extends Controller
     {
         //insert new record process 
         $service = $this->validate(request(), [
+            'user_id'=>'required', 
+            'name'=> 'required',
             'deviceType' => 'required',
             'brand' => 'required',
             'serialNo'  => 'required',
@@ -72,6 +75,9 @@ class ServiceController extends Controller
     public function edit($id)
     {
         //
+        //display edit form 
+        $service = Service::find($id); 
+        return view('services.CustEdit',compact('service','id'));
     }
 
     /**
@@ -84,6 +90,16 @@ class ServiceController extends Controller
     public function update(Request $request, $id)
     {
         //
+        //save updated data 
+        $data = $this->validate($request,
+        [ 'user_id'=>'required', 'name'=> 'required', 'deviceType'=> 'required' ]);
+        $data['id'] = $id; $service = Service::find($id); 
+        $service->user_id=$request->get('user_id'); 
+        $service->name=$request->get('name'); 
+        $service->deviceType=$request->get('deviceType'); 
+        $service->save(); 
+
+        return redirect('/services')->with('success', 'Service info has been updated!!');
     }
 
     /**
@@ -94,6 +110,10 @@ class ServiceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //delete selected record
+        $service = \App\Service::find($id);
+        $service->delete();
+
+        return redirect('/services')->with('successdelete', 'Service info has been deleted!!');
     }
 }

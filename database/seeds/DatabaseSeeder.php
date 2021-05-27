@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Type;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,5 +13,19 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UserSeeder::class);
+
+            DB::table('services')->insert([
+            'name' => 'Safina',
+            'deviceType' => 'laptop',
+            'brand' => 'acer',
+            'serialNo'  => 'abc12345',
+            'faulty'  => 'screen problem',
+            'cost' => '135'
+            ]);
+
+        $type_quotation = Type::where('name', 'quotation')->first();
+        $type_repair = Type::where('name', 'repair')->first();
+        
+        $this->call(TypeTableSeeder:: class);
     }
 }
