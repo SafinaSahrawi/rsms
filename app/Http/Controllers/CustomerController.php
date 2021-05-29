@@ -86,4 +86,11 @@ class CustomerController extends Controller
     {
         //
     }
+
+    public function insertform()
+    {
+        return view('payment/cashondelivery')
+    }
+
+
 }
