@@ -39,8 +39,23 @@ Route::resource('services','ServiceController');
 
 Route::get('riderhome', function () {
     return view('riderHomepage');
-})->middleware('auth', 'checkuser:runner@customer.com');
+})->middleware('auth', 'checkuser:runner@runner.com');
 
 Route::get('customerHome', function () {
     return view('customerHome');
 })->middleware('auth', 'checkuser:customer@customer.com');
+
+
+//Payment
+Route::get('/payment', function () {
+    return view('payment/payment');
+});
+
+Route::get('/paymentoption', function () {
+    return view('payment/paymentoption');
+});
+
+Route::get('/cod', function () {
+    return view('payment/cashondelivery');
+});
+
