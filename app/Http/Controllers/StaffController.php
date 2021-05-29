@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\User;
+
 class StaffController extends Controller
 {
     /**
@@ -12,9 +14,21 @@ class StaffController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        //search based on keyword
+        if($request->get('keyword') != null)
+        {
+            $keyword = $request->get('keyword');
+            $users = User::where('name','LIKE','%'.$keyword.'%')->get();
+            $users = User::where('name','LIKE','%'.$keyword.'%')->paginate(5); 
+        }
+        //display all records
+        else
+        {
+            $users = User::all(); //sql command: SELECT * FORM TABLE....
+        }
+        return view('account.customerProfileList')->with(compact('users'));
     }
 
     /**
@@ -25,7 +39,7 @@ class StaffController extends Controller
     public function create()
     {
         //Display Staff homepage
-        return view('staffs.homepage');
+        return view('account.staffHomepage');
     }
 
     /**
@@ -56,7 +70,7 @@ class StaffController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editCustomer($id)
     {
         //
     }
@@ -81,6 +95,10 @@ class StaffController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //delete selected record
+        $users = \App\User::find($id);
+        $users->delete();
+
+        return redirect('/account/customerProfileList')->with('successdelete', 'Service info has been deleted!!');
     }
 }
