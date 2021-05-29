@@ -23,10 +23,16 @@
                 		<input name="serialNo" type="text" class="form-control">
 
                         Device Faulty
-                        <input name="faulty" type="text" class="form-control">
+<!--                         <input name="faulty" type="text" class="form-control">
+ -->                        <select name="faulty" class="form-control">
+                            <option value="screen">Screen</option>
+                            <option value="motherboard">Motherboard</option>
+                            <option value="water_damage">Water Damage</option>
+                            <option value="others">Others</option>
+                        </select>
 
-                        Cost
-                        <input name="cost" type="text" class="form-control">
+                        <!-- Cost
+                        <input name="cost" type="text" class="form-control"> -->
 
                 		<hr>
                 		
