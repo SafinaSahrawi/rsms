@@ -5,20 +5,18 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Customer Homepage') }}</div>
+                <div class="card-header">{{ __('Rider Homepage') }}</div>
 
                 <div class="card-body">
 
                 	<center>
 
                 	<!--form start-->
-                	<form action="{{ action('CustomerController@create')}}" method="POST">
+                	<form action="{{ action('RiderController@create')}}" method="POST">
 
                 		<a href="http://programminghead.com"><button class="btn btn-primary">View Profile</button></a><br><br>
 
-                		<a href="http://programminghead.com"><button class="btn btn-primary">Services</button></a><br><br>
-
-                		<a href="http://programminghead.com"><button class="btn btn-primary">My Order</button></a>
+                		<a href="http://programminghead.com"><button class="btn btn-primary">Pick Up Details</button></a><br><br>
 
                 	</form>
                 	<!--form end-->

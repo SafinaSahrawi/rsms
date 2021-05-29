@@ -46,6 +46,12 @@
                             <option value="others">Others</option>
                             <input name="faulty" placeholder="Please State the Faulty" class="form-control" type="text" style="display: none" id="textboxes">
                         </select>
+
+                        Cost
+                        <input name="cost" type="text" class="form-control">
+
+                		<hr>
+
                 		
                 		<button type="submit" class="btn btn-primary">Insert to DB</button>
 

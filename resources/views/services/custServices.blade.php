@@ -10,7 +10,7 @@
                 <div class="card-body">
 
                 	<!--form start-->
-                	<form action="{{ action('TrainingController@store')}}" method="POST">
+                	<form action="{{ action('ServiceController@store')}}" method="POST">
                 		@csrf
 
                 		Username

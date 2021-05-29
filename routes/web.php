@@ -28,16 +28,34 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Customer Route
 //get ('path')
 
+// customerHomepage Display
+Route::get('/registration/customerHomepage','CustomerController@create')->name('registration:customerHomepage');
 
-Route::get('/customers/homepage','CustomerController@create')->name('customer:homepage');
-
-
-//Runner Route
-Route::get('/runners/homepage','RunnerController@create')->name('runner:homepage');
-
-
-//Staff Route
-Route::get('/staffs/homepage','StaffController@create')->name('staff:homepage');
+// riderHomepage Display
+Route::get('/registration/riderHomepage','RiderController@create')->name('registration:riderHomepage');
 
 //service module
 Route::resource('services','ServiceController');
+
+Route::get('riderhome', function () {
+    return view('riderHomepage');
+})->middleware('auth', 'checkuser:runner@runner.com');
+
+Route::get('customerHome', function () {
+    return view('customerHome');
+})->middleware('auth', 'checkuser:customer@customer.com');
+
+
+//Payment
+Route::get('/payment', function () {
+    return view('payment/payment');
+});
+
+Route::get('/paymentoption', function () {
+    return view('payment/paymentoption');
+});
+
+Route::get('/cod', function () {
+    return view('payment/cashondelivery');
+});
+
