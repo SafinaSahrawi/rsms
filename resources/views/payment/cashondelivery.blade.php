@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+<html>
+<body>
 
 <div class="container">
     <div class="row justify-content-center">
@@ -13,15 +15,15 @@
                 	<center>
 
                 	<!--form start-->
-                  <form method="post" action="{{url('payment')}}">
-
+<form action="submit" method="POST">
+@csrf
   <div class="form-group">
     <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" name="deliveryaddress" placeholder="Apartment,building,no">
+    <input type="text" class="form-control" id="inputAddress" name="CustomerDeliveryAdd" placeholder="Apartment,building,no">
   </div>
   <div class="form-group">
     <label for="inputContactNum">Contact Number</label>
-    <input type="text" class="form-control" id="inputContactNum" name="contactnum" placeholder="Example: +6011223344">
+    <input type="text" class="form-control" id="inputContactNum" name="CustomerContactNum" placeholder="Example: +6011223344">
   </div>
   <div class="form-group">
     <label for="payment">Payment</label>
@@ -47,6 +49,8 @@
         </div>
     </div>
 </div>
+</body>
+</htm>
 
 
 @endsection
