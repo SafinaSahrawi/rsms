@@ -9,4 +9,5 @@ class Payment extends Model
     //
     protected $table = 'payment';
     public $timestamps = false;
+
 }
