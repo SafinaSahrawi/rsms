@@ -32,11 +32,14 @@
                                 <td>{{ $user->id }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
-                                <td>@csrf
-                                      <input name="_method" type="hidden" value="DELETE">
-                                      <button class="btn btn-danger" type="submit">
-                                          <i class="fas fa-trash-alt"></i>
-                                      </button></td>
+                                <td><!-- form with delete button -->
+                                    <form method="POST" action="{{action('StaffController@delete', $users['id'])}}">
+                                        @csrf <!-- security token -->
+                                        <button class="btn btn-danger btn-sm" onclick="return confirm('Are you sure want to delete record?">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
