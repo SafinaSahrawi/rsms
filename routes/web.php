@@ -60,7 +60,7 @@ Route::get('/paymentoption', function () {
 });
 
 
-//Payment
+//Delivery
 Route::get('/delivery/option', function () {
     return view('delivery/customer_pickup_delivery_option');
 });
