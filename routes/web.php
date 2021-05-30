@@ -46,6 +46,7 @@ Route::get('customerHome', function () {
 })->middleware('auth', 'checkuser:customer@customer.com');
 
 
+
 //Payment
 Route::get('/payment', function () {
     return view('payment/payment');
@@ -58,4 +59,5 @@ Route::get('/paymentoption', function () {
 Route::get('/cod', function () {
     return view('payment/cashondelivery');
 });
+
 
