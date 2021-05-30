@@ -17,9 +17,6 @@ class CreatePaymentTable extends Migration
             $table->increments('payment_id');
             $table->string('CustomerDeliveryAdd');
             $table->integer('CustomerContactNum');
-            $table->integer('CustomerCardNumber');
-            $table->string('CustomerBankPassword');
-            $table->integer('CustomerTAC');
 
             
 

@@ -19,11 +19,11 @@
 @csrf
   <div class="form-group">
     <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" name="CustomerDeliveryAdd" placeholder="Apartment,building,no">
+    <input type="text" class="form-control" name="CustomerDeliveryAdd" placeholder="Apartment,building,no">
   </div>
   <div class="form-group">
     <label for="inputContactNum">Contact Number</label>
-    <input type="text" class="form-control" id="inputContactNum" name="CustomerContactNum" placeholder="Example: +6011223344">
+    <input type="text" class="form-control" name="CustomerContactNum" placeholder="Example: +6011223344">
   </div>
   <div class="form-group">
     <label for="payment">Payment</label>
