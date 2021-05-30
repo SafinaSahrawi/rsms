@@ -11,11 +11,11 @@
 
                 	<center>
 
-                		<a href="http://programminghead.com"><button class="btn btn-primary">View Profile</button></a><br><br>
+                		<a href=""><button class="btn btn-primary">View Profile</button></a><br><br>
 
                 		<a href="http://rsms.test/services"><button class="btn btn-primary">Services</button></a><br><br>
 
-                		<a href="http://programminghead.com"><button class="btn btn-primary">My Order</button></a>
+                		<a href=""><button class="btn btn-primary">My Order</button></a>
 
                 	</center>
 
