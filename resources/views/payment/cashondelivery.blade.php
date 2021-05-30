@@ -13,7 +13,7 @@
                 	<center>
 
                 	<!--form start-->
-                  <form method="post" action="{{url('payment'}}">
+                  <form method="post" action="{{url('payment')}}">
 
   <div class="form-group">
     <label for="inputAddress">Address</label>

@@ -59,7 +59,7 @@ Route::get('/paymentoption', function () {
     return view('payment/paymentoption');
 });
 
-Route::get('/cod', function () {
-    return view('payment/cashondelivery');
-});
 
+Route::get('/payment/cashondelivery','PaymentController@create')->name('payment:cashondelivery');
+
+Route::post('/payment/cashondeliveryinsert','StudInsertController@insert');
