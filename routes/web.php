@@ -60,6 +60,15 @@ Route::get('/paymentoption', function () {
 });
 
 
-Route::get('/payment/cashondelivery','PaymentController@create')->name('payment:cashondelivery');
+//Delivery
+Route::get('/delivery/option', function () {
+    return view('delivery/customer_pickup_delivery_option');
+});
 
-Route::post('/payment/cashondeliveryinsert','StudInsertController@insert');
+Route::get('/delivery/pickup', function () {
+    return view('delivery/customer_pickup_details');
+});
+
+Route::get('/delivery/delivery', function () {
+    return view('delivery/customer_delivery_details');
+});
