@@ -14,6 +14,17 @@
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script type="text/javascript">
+        function changeDevice() {
+        var deviceBox = document.getElementById("deviceBox");
+        var selectedValue = deviceBox.options[deviceBox.selectedIndex].value;
+        if (selectedValue=="not_listed"){
+        $('#inputbox').show();
+        }
+        else {
+        $('#inputbox').hide();
+        }
+        }
+
         function changeFunc() {
         var selectBox = document.getElementById("selectBox");
         var selectedValue = selectBox.options[selectBox.selectedIndex].value;
@@ -21,7 +32,6 @@
         $('#textboxes').show();
         }
         else {
-        alert("Error");
         $('#textboxes').hide();
         }
         }
