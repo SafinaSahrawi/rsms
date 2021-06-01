@@ -65,4 +65,7 @@ Route::get('/cod', function () {
     return view('payment/cashondelivery');
 });
 
+Route::post('submit','PaymentController@savetodatabase');
+
+
 
