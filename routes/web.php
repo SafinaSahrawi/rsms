@@ -50,6 +50,7 @@ Route::get('customerHome', function () {
 })->middleware('auth', 'checkuser:customer@customer.com');
 
 
+
 //Payment
 Route::get('/payment', function () {
     return view('payment/payment');
@@ -60,15 +61,11 @@ Route::get('/paymentoption', function () {
 });
 
 
-//Delivery
-Route::get('/delivery/option', function () {
-    return view('delivery/customer_pickup_delivery_option');
+Route::get('/cod', function () {
+    return view('payment/cashondelivery');
 });
 
-Route::get('/delivery/pickup', function () {
-    return view('delivery/customer_pickup_details');
-});
+Route::post('submit','PaymentController@savetodatabase');
 
-Route::get('/delivery/delivery', function () {
-    return view('delivery/customer_delivery_details');
-});
+
+
