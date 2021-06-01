@@ -34,6 +34,10 @@ Route::get('/registration/customerHomepage','CustomerController@create')->name('
 // riderHomepage Display
 Route::get('/registration/riderHomepage','RiderController@create')->name('registration:riderHomepage');
 
+// staffHomepage Display
+Route::get('/account/staffHomepage','StaffController@create')->name('account:staffHomepage');
+Route::get('/account/customerProfileList','StaffController@index')->name('account:customerProfileList');
+
 //service module
 Route::resource('services','ServiceController');
 
@@ -56,8 +60,9 @@ Route::get('/paymentoption', function () {
     return view('payment/paymentoption');
 });
 
+
 Route::get('/cod', function () {
     return view('payment/cashondelivery');
 });
 
-Route::post('submit', 'PaymentController@savingdatabase');
+
