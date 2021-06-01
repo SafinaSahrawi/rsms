@@ -32,8 +32,8 @@
 
   <div class="form-group">
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
+      <input class="form-check-input" type="checkbox" id="gridCheck1">
+      <label class="form-check-label" for="gridcheck1">
         Agree to terms and conditions
       </label>
     </div>
