@@ -72,4 +72,3 @@ Route::get('/onlinebanking', function () {
 Route::post('submit','PaymentController@savetodatabase');
 
 
-Route::post('submit','PaymentController@savetodatabase1');

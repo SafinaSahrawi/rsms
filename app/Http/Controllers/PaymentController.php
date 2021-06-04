@@ -12,9 +12,4 @@ class PaymentController extends Controller
     {
         print_r($req->input());
     }
-
-    function savetodatabase1(Request $req)
-    {
-        print_r($req->input());
-    }
 }
