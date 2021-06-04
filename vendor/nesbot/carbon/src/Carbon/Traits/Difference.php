@@ -638,7 +638,7 @@ trait Difference
      */
     public function floatDiffInRealDays($date = null, $absolute = true)
     {
-        $date = $this->resolveUTC($date);
+        $date = $this->resolveCarbon($date)->utc();
         $utc = $this->copy()->utc();
         $hoursDiff = $utc->floatDiffInRealHours($date, $absolute);
 

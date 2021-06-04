@@ -73,7 +73,7 @@ class RequestContext implements ContextInterface
     {
         try {
             $session = $this->request->getSession();
-        } catch (\Exception $exception) {
+        } catch (BadMethodCallException $exception) {
             $session = [];
         }
 
