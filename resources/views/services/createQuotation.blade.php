@@ -28,35 +28,31 @@
                         </div></table>
 
                 		Device Type
-<!--                 		<input name="deviceType" type="text" class="form-control"> -->
-                        <select id="selectBox" name="deviceType" class="form-control" onchange="changeFunc();">
+                        <select id="deviceBox" name="deviceType" class="form-control" onchange="changeDevice();">
                             <option value="cpu">CPU/Personal Computer</option>
                             <option value="laptop">Laptop</option>
                             <option value="monitor">Monitor</option>
                             <option value="hardisk">Hard Disk</option>
-                            <option value="others">Others</option>
-                            <input name="deviceType" placeholder="Please State Device Type" class="form-control" type="text" style="display: none" id="textboxes">
+                            <option value="not_listed">Others</option><hr>
+                            <input name="deviceType" placeholder="Please State Device Type" class="form-control" type="text" style="display: none" id="inputbox">
                         </select>
 
-                		Brand
-                		<input name="brand" type="text" class="form-control">
 
-                		Serial Number
-                		<input name="serialNo" type="text" class="form-control">
+                        Brand
+                        <input name="brand" type="text" class="form-control">
+
+                        Serial Number
+                        <input name="serialNo" type="text" class="form-control">
 
                         Device Faulty
                         <select id="selectBox" name="faulty" class="form-control" onchange="changeFunc();">
                             <option value="screen">Screen</option>
                             <option value="motherboard">Motherboard</option>
                             <option value="waterDamage">Water Damage</option>
-                            <option value="others">Others</option>
+                            <option value="others">Others</option><hr>
                             <input name="faulty" placeholder="Please State the Faulty" class="form-control" type="text" style="display: none" id="textboxes">
                         </select>
-
-                        Cost
-                        <input name="cost" type="text" class="form-control">
-
-                		<hr>
+                        <hr>
 
                 		
                 		<button type="submit" class="btn btn-primary">Insert to DB</button>

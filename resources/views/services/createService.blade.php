@@ -14,28 +14,27 @@
                         @csrf
 
                         <table style="center">
-                            <div class="column">
+                            <div class="column" align="center">
                         <tr>
                             <th>Username</th>
                             <th>Email</th>
-                            <th>Phone</th>
+<!--                             <th>Phone</th> -->
                         </tr>
                         <tr>
                         <td><input name="username" value="{{ Auth::user()->name }}" class="form-control" readonly></td>
                         <td><input name="email" type="text" value="{{ Auth::user()->email }}" class="form-control"></td>
-                        <td><input name="phone" type="text" class="form-control"></td>
+<!--                         <td><input name="phone" type="text" class="form-control"></td> -->
                         </tr>
                         </div></table>
 
                         Device Type
-<!--                        <input name="deviceType" type="text" class="form-control"> -->
-                        <select id="deviceBox" name="deviceType" class="form-control" onchange="changeDevice();">
+                        <select name="deviceType" class="form-control">
                             <option value="cpu">CPU/Personal Computer</option>
                             <option value="laptop">Laptop</option>
                             <option value="monitor">Monitor</option>
                             <option value="hardisk">Hard Disk</option>
                             <option value="not_listed">Others</option>
-                            <input name="deviceType" placeholder="Please State Device Type" class="form-control" type="text" style="display: none" id="inputbox">
+<!--                             <input name="deviceType" placeholder="Please State Device Type" class="form-control" type="text" style="display: none" id="inputbox"> -->
                         </select>
 
 
@@ -46,13 +45,14 @@
                         <input name="serialNo" type="text" class="form-control">
 
                         Device Faulty
-                        <select id="selectBox" name="faulty" class="form-control" onchange="changeFunc();">
+                        <select name="faulty" class="form-control">
                             <option value="screen">Screen</option>
                             <option value="motherboard">Motherboard</option>
                             <option value="waterDamage">Water Damage</option>
                             <option value="others">Others</option>
-                            <input name="faulty" placeholder="Please State the Faulty" class="form-control" type="text" style="display: none" id="textboxes">
+                            
                         </select>
+<!--                         <input name="faulty" placeholder="Please State the Faulty" class="form-control" type="text" style="display: none" id="textboxes"> -->
                         <hr>
                         
                         <button type="submit" class="btn btn-primary">Submit</button>

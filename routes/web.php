@@ -36,10 +36,19 @@ Route::get('/registration/riderHomepage','RiderController@create')->name('regist
 
 // staffHomepage Display
 Route::get('/account/staffHomepage','StaffController@create')->name('account:staffHomepage');
+
 Route::get('/account/customerProfileList','StaffController@index')->name('account:customerProfileList');
+Route::post('/account/customerProfileList','StaffController@delete')->name('account:customerProfileList');
 
 //service module
 Route::resource('services','ServiceController');
+
+Route::get('insert','ServiceController@create');
+Route::post('create','ServiceController@store');
+
+Route::get('services/{service}/edit','ServiceController@edit');
+Route::match(['put', 'patch'], 'services/{service}','ServiceController@update');
+
 
 Route::get('riderhome', function () {
     return view('riderHomepage');
@@ -63,6 +72,7 @@ Route::get('/paymentoption', function () {
 
 Route::get('/cod', function () {
     return view('payment/cashondelivery');
+
 });
 
 Route::get('/onlinebanking', function () {
@@ -72,3 +82,4 @@ Route::get('/onlinebanking', function () {
 Route::post('submit','PaymentController@savetodatabase');
 
 Route::post('submit','PaymentController@savetodatabase1');
+

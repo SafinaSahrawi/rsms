@@ -45,7 +45,7 @@
         <th>Brand</th>
         <th>SerialNo</th>
         <th>Device Faulty</th>
-        <th>Cost</th>
+<!--         <th>Cost</th> -->
         <th colspan="2" text-align="center">Action</th>
     </tr>
 </thead>
@@ -58,7 +58,7 @@
         <td>{{$service['brand']}}</td>
         <td>{{$service['serialNo']}}</td>
         <td>{{$service['faulty']}}</td>
-        <td>{{$service['cost']}}</td>
+
         <td><a href="{{action('ServiceController@edit', $service['id'])}}" class="btn btn-warning">
                                       <i class="fa fa-edit"></i>
                                   </a></td>
