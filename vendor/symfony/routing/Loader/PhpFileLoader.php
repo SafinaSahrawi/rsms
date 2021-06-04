@@ -71,7 +71,7 @@ class PhpFileLoader extends FileLoader
     {
         $collection = new RouteCollection();
 
-        $result(new RoutingConfigurator($collection, $this, $path, $file, $this->env));
+        $result(new RoutingConfigurator($collection, $this, $path, $file));
 
         return $collection;
     }

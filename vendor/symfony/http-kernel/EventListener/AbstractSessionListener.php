@@ -52,7 +52,7 @@ abstract class AbstractSessionListener implements EventSubscriberInterface
 
     public function onKernelRequest(RequestEvent $event)
     {
-        if (!$event->isMainRequest()) {
+        if (!$event->isMasterRequest()) {
             return;
         }
 
@@ -68,7 +68,7 @@ abstract class AbstractSessionListener implements EventSubscriberInterface
 
     public function onKernelResponse(ResponseEvent $event)
     {
-        if (!$event->isMainRequest()) {
+        if (!$event->isMasterRequest()) {
             return;
         }
 
@@ -137,7 +137,7 @@ abstract class AbstractSessionListener implements EventSubscriberInterface
 
     public function onFinishRequest(FinishRequestEvent $event)
     {
-        if ($event->isMainRequest()) {
+        if ($event->isMasterRequest()) {
             array_pop($this->sessionUsageStack);
         }
     }

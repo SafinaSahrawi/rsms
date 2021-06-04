@@ -6,7 +6,6 @@ use PhpParser\Error;
 use PhpParser\ErrorHandler;
 use PhpParser\Lexer;
 use PhpParser\Lexer\TokenEmulator\AttributeEmulator;
-use PhpParser\Lexer\TokenEmulator\EnumTokenEmulator;
 use PhpParser\Lexer\TokenEmulator\CoaleseEqualTokenEmulator;
 use PhpParser\Lexer\TokenEmulator\FlexibleDocStringEmulator;
 use PhpParser\Lexer\TokenEmulator\FnTokenEmulator;
@@ -15,13 +14,13 @@ use PhpParser\Lexer\TokenEmulator\NullsafeTokenEmulator;
 use PhpParser\Lexer\TokenEmulator\NumericLiteralSeparatorEmulator;
 use PhpParser\Lexer\TokenEmulator\ReverseEmulator;
 use PhpParser\Lexer\TokenEmulator\TokenEmulator;
+use PhpParser\Parser\Tokens;
 
 class Emulative extends Lexer
 {
     const PHP_7_3 = '7.3dev';
     const PHP_7_4 = '7.4dev';
     const PHP_8_0 = '8.0dev';
-    const PHP_8_1 = '8.1dev';
 
     /** @var mixed[] Patches used to reverse changes introduced in the code */
     private $patches = [];
@@ -39,7 +38,7 @@ class Emulative extends Lexer
      */
     public function __construct(array $options = [])
     {
-        $this->targetPhpVersion = $options['phpVersion'] ?? Emulative::PHP_8_1;
+        $this->targetPhpVersion = $options['phpVersion'] ?? Emulative::PHP_8_0;
         unset($options['phpVersion']);
 
         parent::__construct($options);
@@ -52,7 +51,6 @@ class Emulative extends Lexer
             new NumericLiteralSeparatorEmulator(),
             new NullsafeTokenEmulator(),
             new AttributeEmulator(),
-            new EnumTokenEmulator(),
         ];
 
         // Collect emulators that are relevant for the PHP version we're running

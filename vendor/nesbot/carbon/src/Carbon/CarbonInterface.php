@@ -668,8 +668,8 @@ interface CarbonInterface extends DateTimeInterface, JsonSerializable
      * Please see the testing aids section (specifically static::setTestNow())
      * for more on the possibility of this constructor returning a test instance.
      *
-     * @param DateTimeInterface|string|null $time
-     * @param DateTimeZone|string|null      $tz
+     * @param string|null              $time
+     * @param DateTimeZone|string|null $tz
      *
      * @throws InvalidFormatException
      */
@@ -2630,13 +2630,6 @@ interface CarbonInterface extends DateTimeInterface, JsonSerializable
     public function isEndOfDay($checkMicroseconds = false);
 
     /**
-     * Returns true if the date was created using CarbonImmutable::endOfTime()
-     *
-     * @return bool
-     */
-    public function isEndOfTime(): bool;
-
-    /**
      * Determines if the instance is in the future, ie. greater (after) than now.
      *
      * @example
@@ -2845,13 +2838,6 @@ interface CarbonInterface extends DateTimeInterface, JsonSerializable
      * @return bool
      */
     public function isStartOfDay($checkMicroseconds = false);
-
-    /**
-     * Returns true if the date was created using CarbonImmutable::startOfTime()
-     *
-     * @return bool
-     */
-    public function isStartOfTime(): bool;
 
     /**
      * Returns true if the strict mode is globally in use, false else.
