@@ -73,6 +73,4 @@ Route::get('/delivery/delivery', function () {
     return view('delivery/customer_delivery_details');
 });
 
-Route::get('/delivery1/delivery', function () {
-    return view('delivery/customer_delivery_details');
-});
+
