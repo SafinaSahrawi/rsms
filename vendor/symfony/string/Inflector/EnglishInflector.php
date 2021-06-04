@@ -61,9 +61,6 @@ final class EnglishInflector implements InflectorInterface
         // movies (movie)
         ['seivom', 6, true, true, 'movie'],
 
-        // conspectuses (conspectus), prospectuses (prospectus)
-        ['sesutcep', 8, true, true, 'pectus'],
-
         // feet (foot)
         ['teef', 4, true, true, 'foot'],
 
@@ -120,9 +117,6 @@ final class EnglishInflector implements InflectorInterface
 
         // fees (fee), trees (tree), employees (employee)
         ['see', 3, true, true, 'ee'],
-
-        // edges (edge)
-        ['segd', 4, true, true, 'dge'],
 
         // roses (rose), garages (garage), cassettes (cassette),
         // waltzes (waltz), heroes (hero), bushes (bush), arches (arch),
@@ -270,9 +264,6 @@ final class EnglishInflector implements InflectorInterface
         // circuses (circus)
         ['suc', 3, true, true, 'cuses'],
 
-        // conspectuses (conspectus), prospectuses (prospectus)
-        ['sutcep', 6, true, true, 'pectuses'],
-
         // fungi (fungus), alumni (alumnus), syllabi (syllabus), radii (radius)
         ['su', 2, true, true, 'i'],
 
@@ -318,32 +309,14 @@ final class EnglishInflector implements InflectorInterface
      */
     private const UNINFLECTED = [
         '',
-
-        // data
         'atad',
-
-        // deer
         'reed',
-
-        // feedback
         'kcabdeef',
-
-        // fish
         'hsif',
-
-        // info
         'ofni',
-
-        // moose
         'esoom',
-
-        // series
         'seires',
-
-        // sheep
         'peehs',
-
-        // species
         'seiceps',
     ];
 
