@@ -61,7 +61,7 @@ Route::get('/paymentoption', function () {
 
 
 //Delivery
-Route::get('/delivery/option', function () {
+Route::get('/pickupanddelivery/option', function () {
     return view('delivery/customer_pickup_delivery_option');
 });
 
@@ -75,4 +75,4 @@ Route::get('/delivery', function () {
 
 Route::post('submit','PickupController@savetopickup');
 
-
+Route::post('submit','DeliveryController@savetodelivery');
