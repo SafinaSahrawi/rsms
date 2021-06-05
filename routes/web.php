@@ -65,12 +65,14 @@ Route::get('/delivery/option', function () {
     return view('delivery/customer_pickup_delivery_option');
 });
 
-Route::get('/delivery/pickup', function () {
+Route::get('/pickup', function () {
     return view('delivery/customer_pickup_details');
 });
 
-Route::get('/delivery/delivery', function () {
+Route::get('/delivery', function () {
     return view('delivery/customer_delivery_details');
 });
+
+Route::post('submit','PickupController@savetopickup');
 
 
