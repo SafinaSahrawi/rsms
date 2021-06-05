@@ -13,7 +13,7 @@
 
                 		<a href="http://rsms.test/account/customerProfileList"><button class="btn btn-primary">Customer List</button></a><br><br>
 
-                		<a href=""><button class="btn btn-primary">Rider List</button></a><br><br>
+                		<a href="http://rsms.test/account/riderProfileList"><button class="btn btn-primary">Rider List</button></a><br><br>
 
                         <a href=""><button class="btn btn-primary">Quotation Requests</button></a><br><br>
 

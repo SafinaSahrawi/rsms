@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Customer List
+                <div class="card-header">Rider List
 
                 <div class="float-right">
                     <form class = "form-inline">
@@ -15,18 +15,6 @@
                 </div>
                 
                 <div class="card-body">
-
-                    @if (session('success'))
-                        <div class="alert alert-warning">
-                            {{ session('success') }}
-                        </div>
-                    @endif
-
-                    @if (session('delete'))
-                        <div class="alert alert-danger">
-                            {{ session('delete') }}
-                        </div>
-                    @endif
 
                     <table class="table table-striped">
                         <thead>
@@ -39,18 +27,18 @@
                         </thead>
 
                         <tbody>
-                            @foreach($customers as $customer)
+                            @foreach($riders as $rider)
                             <tr>
-                                <td>{{ $customer->id }}</td>
-                                <td>{{ $customer->username }}</td>
-                                <td>{{ $customer->email }}</td>
+                                <td>{{ $rider->id }}</td>
+                                <td>{{ $rider->username }}</td>
+                                <td>{{ $rider->email }}</td>
 
-                                <td><a class="btn btn-success" href="{{ action('StaffController@showCustomer', $customer->id) }}"><i class="fa fa-list-alt"></i></a>
+                                <td><a class="btn btn-success" href=""><i class="fa fa-list-alt"></i></a>
 
                                 <td><!-- form with delete button -->
-                                    <form method="POST" action="{{ action('StaffController@destroyCustomer', $customer->id) }}">
+                                    <form method="POST" action="">
                                         @csrf <!-- security token -->
-                                        <button class="btn btn-danger" onclick="return confirm('Delete Record ID: {{ $customer->id }}')">
+                                        <button class="btn btn-danger" onclick="return confirm('Are you sure want to delete record?">
                                         <i class="fa fa-trash"></i>
                                         </button>
                                     </form>
@@ -59,7 +47,6 @@
                         </tr> @endforeach
                         </tbody>
                     </table>
-                    {{$customers->links()}}
                 </div>
             </div></div>
         </div>

@@ -19,24 +19,34 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// staffHomepage Display
+Route::get('/home', 'StaffController@create')->name('account:staffHomepage');
 
-Auth::routes();
+Route::get('/account/staffHomepage','StaffController@create')->name('account:staffHomepage');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/account/customerProfileList','StaffController@indexCustomer')->name('account:customerProfileList');
 
-//Customer Route
-//get ('path')
+Route::get('/{customer}','StaffController@showCustomer')->name('account:customerProfile');
 
-// customerHomepage Display
-Route::get('/registration/customerHomepage','CustomerController@create')->name('registration:customerHomepage');
+Route::post('/{customer}/destroy','StaffController@destroyCustomer')->name('destroyCustomer'); // delete=destroy
+
+Route::get('/account/riderProfileList','StaffController@indexRider')->name('account:StaffProfileList');
+
+
+
+
+
+//rider registration
+Route::get('/registerrider', function () {
+    return view('registration/registerrider');
+});
+Route::post('submit','RiderController@storetodatabase');
+
 
 // riderHomepage Display
 Route::get('/registration/riderHomepage','RiderController@create')->name('registration:riderHomepage');
 
-// staffHomepage Display
-Route::get('/account/staffHomepage','StaffController@create')->name('account:staffHomepage');
-Route::get('/account/customerProfileList','StaffController@index')->name('account:customerProfileList');
+
 
 //service module
 Route::resource('services','ServiceController');
@@ -74,4 +84,11 @@ Route::post('submit','PaymentController@savetodatabase');
 Route::post('submit','PaymentController@savetodatabase1');
 
 
+
 Route::get('/payment/customerpaymentlist','PaymentController@index')->name('payment:customerpaymentlist');
+
+Route::post('/payment/cashondeliveryinsert','StudInsertController@insert');
+
+Route::get('/success', function () {
+    return view('registration/riderHomepage');
+});
