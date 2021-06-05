@@ -59,10 +59,12 @@
             }
 
             .m-b-md {
-                margin-bottom: 30px;
+                margin-bottom: 5px;
             }
+
         </style>
     </head>
+    
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
@@ -80,11 +82,14 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    RSMS Laravel Testingggg
-                </div>
+                
+                <div class="title">RSMS</div>
 
-                <div class="links">
+                <h2>Repair Service Management System</h2>
+                
+                <div><img src="images/1.jpg"></div>
+
+                <!-- <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
@@ -93,8 +98,8 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                </div> -->
             </div>
         </div>
     </body>
-</html>
+    </html>
