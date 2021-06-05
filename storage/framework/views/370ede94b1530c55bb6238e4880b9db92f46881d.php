@@ -8,6 +8,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+        
 
         <!-- Styles -->
         <style>
@@ -73,7 +75,18 @@
                         <a href="<?php echo e(route('login')); ?>">Login</a>
 
                         <?php if(Route::has('register')): ?>
-                            <a href="<?php echo e(route('register')); ?>">Register</a>
+                           
+                            <div class="dropdown">
+                                <button class="dropbtn">Create account
+                                <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="dropdown-content">
+                                <a href="<?php echo e(url('registercustomer')); ?>">Sign-up as customer</a>
+                                <a href="<?php echo e(url('registerrider')); ?>">Sign-up as rider</a>
+                                </div>
+                            </div>
+                            
+
                         <?php endif; ?>
                     <?php endif; ?>
                 </div>

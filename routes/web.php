@@ -29,10 +29,22 @@ Route::get('/home', 'HomeController@index')->name('home');
 //get ('path')
 
 // customerHomepage Display
-Route::get('/registration/customerHomepage','CustomerController@create')->name('registration:customerHomepage');
+//Route::get('/registration/customerHomepage','CustomerController@create')->name('registration:customerHomepage');
+
+//customer registration
+//Route::get('/registration/registercustomer','CustomerController@create')->name('registration:registercustomer');
+
+//rider registration
+Route::get('/registerrider', function () {
+    return view('registration/registerrider');
+});
+Route::post('submit','RiderController@storetodatabase');
+
 
 // riderHomepage Display
 Route::get('/registration/riderHomepage','RiderController@create')->name('registration:riderHomepage');
+
+
 
 // staffHomepage Display
 Route::get('/account/staffHomepage','StaffController@create')->name('account:staffHomepage');
@@ -63,3 +75,7 @@ Route::get('/paymentoption', function () {
 Route::get('/payment/cashondelivery','PaymentController@create')->name('payment:cashondelivery');
 
 Route::post('/payment/cashondeliveryinsert','StudInsertController@insert');
+
+Route::get('/success', function () {
+    return view('registration/riderHomepage');
+});

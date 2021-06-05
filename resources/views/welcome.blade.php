@@ -8,6 +8,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+        
 
         <!-- Styles -->
         <style>
@@ -73,7 +75,18 @@
                         <a href="{{ route('login') }}">Login</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                           
+                            <div class="dropdown">
+                                <button class="dropbtn">Create account
+                                <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="dropdown-content">
+                                <a href="{{ url('registercustomer') }}">Sign-up as customer</a>
+                                <a href="{{ url('registerrider') }}">Sign-up as rider</a>
+                                </div>
+                            </div>
+                            
+
                         @endif
                     @endauth
                 </div>

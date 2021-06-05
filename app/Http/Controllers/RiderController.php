@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\rider;
 
 class RiderController extends Controller
 {
@@ -25,7 +26,7 @@ class RiderController extends Controller
     public function create()
     {
         //Display riderHomepage
-        return view('registration.riderHomepage'); //riderHomepage.blade.php
+        return view('registration.registerrider'); //riderHomepage.blade.php
     }
 
     /**
@@ -83,4 +84,21 @@ class RiderController extends Controller
     {
         //
     }
+
+    function storetodatabase(Request $req)
+    {
+        // print_r($req->input());
+        $rider = new rider;
+        $rider->username= $req->username;
+        $rider->fullname= $req->fullname;
+        $rider->contact= $req->contact;
+        $rider->address= $req->address;
+        $rider->password= $req->password;
+        $rider->email= $req->email;
+        $rider->ic= $req->ic;
+        $rider->license_type= $req->license_type;
+        $rider->license_exp= $req->license_exp;
+        return redirect('/success');
+    }
+    
 }
