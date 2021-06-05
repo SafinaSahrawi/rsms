@@ -5,30 +5,56 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\User;
+use App\Customer;
+use App\rider;
 
 class StaffController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function indexCustomer(Request $request)
     {
-        //search based on keyword
-        if($request->get('keyword') != null)
+        if($request->GET('keyword')!=null)
         {
-            $keyword = $request->get('keyword');
-            $users = User::where('name','LIKE','%'.$keyword.'%')->get();
-            $users = User::where('name','LIKE','%'.$keyword.'%')->paginate(5); 
+            //search based on keyword
+            $keyword = $request->GET('keyword');
+            $customers = Customer::where('username','LIKE','%'.$keyword.'%')->GET();
+            $customers = Customer::where('username','LIKE','%'.$keyword.'%')->paginate(10); //data yang akan keluar
         }
         //display all records
         else
         {
-            $users = User::all(); //sql command: SELECT * FORM TABLE....
+            $customers = Customer::all();
+            $customers = Customer::paginate(10);
         }
-        return view('account.customerProfileList')->with(compact('users'));
+        return view('account.customerProfileList')->with(compact('customers')); //call $customers
+    }
+
+    public function indexRider(Request $request)
+    {
+        // if($request->GET('keyword')!=null)
+        // {
+        //     //search based on keyword
+        //     $keyword = $request->GET('keyword');
+        //     $customers = Customer::where('username','LIKE','%'.$keyword.'%')->GET();
+        //     $customers = Customer::where('username','LIKE','%'.$keyword.'%')->paginate(10); //data yang akan keluar
+        // }
+        // //display all records
+        // else
+        // {
+        //     $customers = Customer::all();
+        //     $customers = Customer::paginate(10);
+        // }
+        $riders = rider::all();
+        return view('account.riderProfileList')->with(compact('riders')); //call $customers
     }
 
     /**
@@ -59,9 +85,10 @@ class StaffController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showCustomer($id)
     {
-        //
+        $customer = Customer::find($id);
+        return view('account.customerProfile')->with(compact('customer'));
     }
 
     /**
@@ -70,9 +97,9 @@ class StaffController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function editCustomer($id)
+    public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -93,12 +120,12 @@ class StaffController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function delete($id)
+    public function destroyCustomer($id)
     {
         //delete selected record
-        $user = \App\User::find($id);
-        $user->delete();
+        $customer = \App\Customer::find($id);
+        $customer->delete();
 
-        return redirect('/account/customerProfileList')->with('successdelete', 'Customer has been deleted!!');
+        return redirect('/account/customerProfileList')->with('delete', "Customer $id has been deleted!");
     }
 }

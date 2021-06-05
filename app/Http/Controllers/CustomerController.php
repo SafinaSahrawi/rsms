@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Customer;
 
 class CustomerController extends Controller
 {
@@ -25,8 +26,10 @@ class CustomerController extends Controller
     public function create()
     {
         //Display  homepage interfaces
-        return view('registration.customerHomepage'); //customerHomepage.blade.php
+        //return view('registration.customerHomepage'); //customerHomepage.blade.php
+        return view ('registration.registercustomer');//register customer
         return view ('services.create');
+        
     }
 
     /**
@@ -85,6 +88,19 @@ class CustomerController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    function storetocustomer(Request $req)
+    {
+        // print_r($req->input());
+        $customer = new customer;
+        $customer->username= $req->username;
+        $customer->fullname= $req->fullname;
+        $customer->contact= $req->contact;
+        $customer->address= $req->address;
+        $customer->password= $req->password;
+        $customer->email= $req->email;
+        return redirect('/success');
     }
 
 
