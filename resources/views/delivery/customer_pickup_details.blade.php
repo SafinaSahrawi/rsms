@@ -6,28 +6,27 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Cash on Delivery') }}</div>
+                <div class="card-header">{{ __('Pick Up') }}</div>
 
                 <div class="card-body">
 
                 	<center>
 
                 	<!--form start-->
-<form method="post" action="submit">
-
-@csrf
+                  <form method="post" action="">
+                  @csrf
 
   <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" name="CustomerDeliveryAdd" placeholder="Apartment,building,no">
+    <label for="inputAddress">Pick Up Address</label>
+    <input type="text" class="form-control" id="inputAddress" name="address" placeholder="House Num, Street Num, Postal Code, City, State">
   </div>
   <div class="form-group">
-    <label for="inputContactNum">Contact Number</label>
-    <input type="text" class="form-control" id="inputContactNum" name="CustomerContactNum" placeholder="Example: +6011223344">
+    <label for="date">Date</label>
+    <input type="date" class="form-control" id="date" name="date">
   </div>
   <div class="form-group">
-    <label for="payment">Payment</label>
-    <input type="text" class="form-control" name="payment" id="payment" disabled>
+    <label for="time">Time</label>
+    <input type="time" class="form-control" name="time" id="time">
   </div>
 
   <div class="form-group">
@@ -38,7 +37,7 @@
       </label>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Checkout</button>
+  <a href="http://rsms.test/paymentoption"><button type="submit" class="btn btn-primary">Proceed to Payment</button>
 </form>
                 	<!--form end-->
 
@@ -49,8 +48,6 @@
         </div>
     </div>
 </div>
-</body>
-</html>
 
 
 @endsection

@@ -36,9 +36,7 @@ Route::get('/registration/riderHomepage','RiderController@create')->name('regist
 
 // staffHomepage Display
 Route::get('/account/staffHomepage','StaffController@create')->name('account:staffHomepage');
-
 Route::get('/account/customerProfileList','StaffController@index')->name('account:customerProfileList');
-Route::post('/account/customerProfileList','StaffController@delete')->name('account:customerProfileList');
 
 //service module
 Route::resource('services','ServiceController');
@@ -52,6 +50,7 @@ Route::get('customerHome', function () {
 })->middleware('auth', 'checkuser:customer@customer.com');
 
 
+
 //Payment
 Route::get('/payment', function () {
     return view('payment/payment');
@@ -61,6 +60,18 @@ Route::get('/paymentoption', function () {
     return view('payment/paymentoption');
 });
 
+
 Route::get('/cod', function () {
     return view('payment/cashondelivery');
 });
+
+Route::get('/onlinebanking', function () {
+    return view('payment/onlinebanking');
+});
+
+Route::post('submit','PaymentController@savetodatabase');
+
+Route::post('submit','PaymentController@savetodatabase1');
+
+
+Route::get('/payment/customerpaymentlist','PaymentController@index')->name('payment:customerpaymentlist');
