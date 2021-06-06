@@ -8,6 +8,7 @@
                 <div class="card-header">Customer List
 
                 <div class="float-right">
+                <form action="submit" method="POST">
                     <form class = "form-inline">
                         <input type="text" name="keyword" class="form-control" method="get" action="{{ route('payment:customerpaymentlist') }}">
                         <button type="submit" class="btn btn-primary">Search</button>
@@ -20,27 +21,37 @@
                         <thead>
                         <tr>
                             <th>Payment ID</th>
-                            <th>Delivery Address</th>
-                            <th>Contact Number</th>
+                            <th>Username</th>
+                            <th>Card Number</th>
+                            <th>TAC</th>
                             <th>Update</th>
                         </tr>
                         </thead>
 
                         <tbody>
-                            @foreach($payment as $pb)
+                            @foreach($payment1 as $pb)
                             <tr>
-                                <td>{{ $pb->payment_id }}</td>
-                                <td>{{ $pb->CustomerDeliveryAdd }}</td>
-                                <td>{{ $pb->CustomerContactNum }}</td>
+                                <td>{{ $pb->paymentbank_id }}</td>
+                                <td>{{ $pb->Username }}</td>
+                                <td>{{ $pb->CardNumber }}</td>
+                                <td>{{ $pb->TAC }}</td>
                                 <td>@csrf
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                      
+                                      <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Verify
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
     <button class="dropdown-item" type="button">Paid</button>
     <button class="dropdown-item" type="button">Unpaid</button>
 
+  </div>
+</div>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
+                </form>
                 </div>
             </div></div>
         </div>
