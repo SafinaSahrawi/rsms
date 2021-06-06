@@ -73,7 +73,6 @@ Route::post('submit','PaymentController@savetodatabase');
 
 Route::post('submit','PaymentController@savetodatabase1');
 
-
 Route::get('/payment/customerpaymentlist','PaymentController@index')->name('payment:customerpaymentlist');
 
 Route::get('/payment/customerpaymentlist1','PaymentController@indexdetails')->name('payment:customerpaymentlist1');
