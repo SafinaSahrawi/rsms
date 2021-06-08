@@ -29,7 +29,7 @@ class ServiceController extends Controller
     public function create()
     {
         //display form
-        return view ('services.createService');
+        return view ('services.createQuotation');
     }
 
     /**
