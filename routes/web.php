@@ -34,6 +34,11 @@ Route::get('/account/riderProfileList','StaffController@indexRider')->name('acco
 
 
 
+// customerHomepage Display
+//Route::get('/registration/customerHomepage','CustomerController@create')->name('registration:customerHomepage');
+
+//customer registration
+//Route::get('/registration/registercustomer','CustomerController@create')->name('registration:registercustomer');
 
 
 //rider registration
@@ -46,6 +51,12 @@ Route::post('submit','RiderController@storetodatabase');
 // riderHomepage Display
 Route::get('/registration/riderHomepage','RiderController@create')->name('registration:riderHomepage');
 
+
+
+
+// staffHomepage Display
+Route::get('/account/staffHomepage','StaffController@create')->name('account:staffHomepage');
+Route::get('/account/customerProfileList','StaffController@index')->name('account:customerProfileList');
 
 
 //service module
@@ -86,6 +97,8 @@ Route::post('submit','PaymentController@savetodatabase1');
 
 
 Route::get('/payment/customerpaymentlist','PaymentController@index')->name('payment:customerpaymentlist');
+
+Route::post('/payment/cashondeliveryinsert','StudInsertController@insert');
 
 Route::post('/payment/cashondeliveryinsert','StudInsertController@insert');
 
