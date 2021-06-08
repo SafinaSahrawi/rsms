@@ -16,31 +16,50 @@
                 
                 <div class="card-body">
 
+                    @if (session('success'))
+                        <div class="alert alert-warning">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    @if (session('delete'))
+                        <div class="alert alert-danger">
+                            {{ session('delete') }}
+                        </div>
+                    @endif
+
                     <table class="table table-striped">
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Name</th>
+                            <th>Username</th>
                             <th>Email</th>
-                            <th>Action</th>
+                            <th colspan="2">Action</th>
                         </tr>
                         </thead>
 
                         <tbody>
-                            @foreach($users as $user)
+                            @foreach($customers as $customer)
                             <tr>
-                                <td>{{ $user->id }}</td>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>@csrf
-                                      <input name="_method" type="hidden" value="DELETE">
-                                      <button class="btn btn-danger" type="submit">
-                                          <i class="fas fa-trash-alt"></i>
-                                      </button></td>
-                            </tr>
-                            @endforeach
+                                <td>{{ $customer->id }}</td>
+                                <td>{{ $customer->username }}</td>
+                                <td>{{ $customer->email }}</td>
+
+                                <td><a class="btn btn-success" href="{{ action('StaffController@showCustomer', $customer->id) }}"><i class="fa fa-list-alt"></i></a>
+
+                                <td><!-- form with delete button -->
+                                    <form method="POST" action="{{ action('StaffController@destroyCustomer', $customer->id) }}">
+                                        @csrf <!-- security token -->
+                                        <button class="btn btn-danger" onclick="return confirm('Delete Record ID: {{ $customer->id }}')">
+                                        <i class="fa fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </td>
+                        </tr> @endforeach
                         </tbody>
                     </table>
+                    {{$customers->links()}}
                 </div>
             </div></div>
         </div>

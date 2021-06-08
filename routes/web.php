@@ -19,20 +19,27 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// staffHomepage Display
+Route::get('/home', 'StaffController@create')->name('account:staffHomepage');
 
-Auth::routes();
+Route::get('/account/staffHomepage','StaffController@create')->name('account:staffHomepage');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/account/customerProfileList','StaffController@indexCustomer')->name('account:customerProfileList');
 
-//Customer Route
-//get ('path')
+Route::get('/{customer}','StaffController@showCustomer')->name('account:customerProfile');
+
+Route::post('/{customer}/destroy','StaffController@destroyCustomer')->name('destroyCustomer'); // delete=destroy
+
+Route::get('/account/riderProfileList','StaffController@indexRider')->name('account:StaffProfileList');
+
+
 
 // customerHomepage Display
 //Route::get('/registration/customerHomepage','CustomerController@create')->name('registration:customerHomepage');
 
 //customer registration
 //Route::get('/registration/registercustomer','CustomerController@create')->name('registration:registercustomer');
+
 
 //rider registration
 Route::get('/registerrider', function () {
@@ -46,9 +53,11 @@ Route::get('/registration/riderHomepage','RiderController@create')->name('regist
 
 
 
+
 // staffHomepage Display
 Route::get('/account/staffHomepage','StaffController@create')->name('account:staffHomepage');
 Route::get('/account/customerProfileList','StaffController@index')->name('account:customerProfileList');
+
 
 //service module
 Route::resource('services','ServiceController');
@@ -62,6 +71,7 @@ Route::get('customerHome', function () {
 })->middleware('auth', 'checkuser:customer@customer.com');
 
 
+
 //Payment
 Route::get('/payment', function () {
     return view('payment/payment');
@@ -72,7 +82,23 @@ Route::get('/paymentoption', function () {
 });
 
 
-Route::get('/payment/cashondelivery','PaymentController@create')->name('payment:cashondelivery');
+Route::get('/cod', function () {
+    return view('payment/cashondelivery');
+});
+
+Route::get('/onlinebanking', function () {
+    return view('payment/onlinebanking');
+});
+
+Route::post('submit','PaymentController@savetodatabase');
+
+Route::post('submit','PaymentController@savetodatabase1');
+
+
+
+Route::get('/payment/customerpaymentlist','PaymentController@index')->name('payment:customerpaymentlist');
+
+Route::post('/payment/cashondeliveryinsert','StudInsertController@insert');
 
 Route::post('/payment/cashondeliveryinsert','StudInsertController@insert');
 

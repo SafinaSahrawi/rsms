@@ -14,6 +14,17 @@
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script type="text/javascript">
+        function changeDevice() {
+        var deviceBox = document.getElementById("deviceBox");
+        var selectedValue = deviceBox.options[deviceBox.selectedIndex].value;
+        if (selectedValue=="not_listed"){
+        $('#inputbox').show();
+        }
+        else {
+        $('#inputbox').hide();
+        }
+        }
+
         function changeFunc() {
         var selectBox = document.getElementById("selectBox");
         var selectedValue = selectBox.options[selectBox.selectedIndex].value;
@@ -21,7 +32,6 @@
         $('#textboxes').show();
         }
         else {
-        alert("Error");
         $('#textboxes').hide();
         }
         }
@@ -40,7 +50,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name', 'RSMS') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -73,6 +83,12 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                                    <a class="dropdown-item" href="{{url('account/staffProfile') }}"
+                                       onclick="">
+                                        {{ __('Profile') }}
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
