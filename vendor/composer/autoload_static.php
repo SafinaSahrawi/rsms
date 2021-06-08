@@ -494,6 +494,7 @@ class ComposerStaticInit8a4dc16ebd99347a870c295867cd63e0
 
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Customer' => __DIR__ . '/../..' . '/app/Customer.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -504,7 +505,12 @@ class ComposerStaticInit8a4dc16ebd99347a870c295867cd63e0
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\CustomerController' => __DIR__ . '/../..' . '/app/Http/Controllers/CustomerController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
-        'App\\Http\\Controllers\\PaymentController' => __DIR__ . '/../..' . '/app/Http/Controllers/PaymentController.php',
+        'App\\Http\\Controllers\\PaymentController' => __DIR__ . '/../..' . '/app/Http/Controllers/paymentcontroller.php',
+
+        'App\\Http\\Controllers\\PickupController' => __DIR__ . '/../..' . '/app/Http/Controllers/PickupController.php',
+
+        'App\\Http\\Controllers\\PaymentController' => __DIR__ . '/../..' . '/app/Http/Controllers/paymentcontroller.php',
+
         'App\\Http\\Controllers\\RiderController' => __DIR__ . '/../..' . '/app/Http/Controllers/RiderController.php',
         'App\\Http\\Controllers\\ServiceController' => __DIR__ . '/../..' . '/app/Http/Controllers/ServiceController.php',
         'App\\Http\\Controllers\\StaffController' => __DIR__ . '/../..' . '/app/Http/Controllers/StaffController.php',
@@ -527,6 +533,11 @@ class ComposerStaticInit8a4dc16ebd99347a870c295867cd63e0
         'App\\Type' => __DIR__ . '/../..' . '/app/Type.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\payment' => __DIR__ . '/../..' . '/app/payment.php',
+
+        'App\\pickup' => __DIR__ . '/../..' . '/app/pickup.php',
+
+        'App\\rider' => __DIR__ . '/../..' . '/app/rider.php',
+
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/CorsService.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',

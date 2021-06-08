@@ -13,20 +13,20 @@
                 	<center>
 
                 	<!--form start-->
-                  <form method="post" action="">
+                  <form method="post" action="submit">
                   @csrf
 
   <div class="form-group">
     <label for="inputAddress">Delivery  Address</label>
-    <input type="text" class="form-control" id="inputAddress" name="address" placeholder="House Num, Street Num, Postal Code, City, State">
+    <input type="text" class="form-control" id="inputAddress" name="delivery_address" placeholder="House Num, Street Num, Postal Code, City, State">
   </div>
   <div class="form-group">
     <label for="date">Date</label>
-    <input type="date" class="form-control" id="date" name="date">
+    <input type="date" class="form-control" id="delivery_date" name="delivery_date">
   </div>
   <div class="form-group">
     <label for="time">Time</label>
-    <input type="time" class="form-control" name="time" id="time">
+    <input type="time" class="form-control" name="delivery_time" id="delivery_time">
   </div>
 
   <div class="form-group">

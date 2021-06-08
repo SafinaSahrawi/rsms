@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
+    'App\\Customer' => $baseDir . '/app/Customer.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -17,7 +18,16 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\CustomerController' => $baseDir . '/app/Http/Controllers/CustomerController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
-    'App\\Http\\Controllers\\PaymentController' => $baseDir . '/app/Http/Controllers/PaymentController.php',
+
+    'App\\Http\\Controllers\\PaymentController' => $baseDir . '/app/Http/Controllers/paymentcontroller.php',
+    'App\\Http\\Controllers\\PickupController' => $baseDir . '/app/Http/Controllers/PickupController.php',
+
+
+    'App\\Http\\Controllers\\PaymentController' => $baseDir . '/app/Http/Controllers/paymentcontroller.php',
+
+    'App\\Http\\Controllers\\PaymentController' => $baseDir . '/app/Http/Controllers/paymentcontroller.php',
+
+
     'App\\Http\\Controllers\\RiderController' => $baseDir . '/app/Http/Controllers/RiderController.php',
     'App\\Http\\Controllers\\ServiceController' => $baseDir . '/app/Http/Controllers/ServiceController.php',
     'App\\Http\\Controllers\\StaffController' => $baseDir . '/app/Http/Controllers/StaffController.php',
@@ -40,6 +50,11 @@ return array(
     'App\\Type' => $baseDir . '/app/Type.php',
     'App\\User' => $baseDir . '/app/User.php',
     'App\\payment' => $baseDir . '/app/payment.php',
+
+    'App\\pickup' => $baseDir . '/app/pickup.php',
+
+    'App\\rider' => $baseDir . '/app/rider.php',
+
     'Asm89\\Stack\\Cors' => $vendorDir . '/asm89/stack-cors/src/Cors.php',
     'Asm89\\Stack\\CorsService' => $vendorDir . '/asm89/stack-cors/src/CorsService.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
