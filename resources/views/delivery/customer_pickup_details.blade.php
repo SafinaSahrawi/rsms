@@ -13,20 +13,20 @@
                 	<center>
 
                 	<!--form start-->
-                  <form method="post" action="">
+                  <form method="post" action="submit">
                   @csrf
 
   <div class="form-group">
     <label for="inputAddress">Pick Up Address</label>
-    <input type="text" class="form-control" id="inputAddress" name="address" placeholder="House Num, Street Num, Postal Code, City, State">
+    <input type="text" class="form-control" id="inputAddress" name="pickup_address" placeholder="House Num, Street Num, Postal Code, City, State">
   </div>
   <div class="form-group">
     <label for="date">Date</label>
-    <input type="date" class="form-control" id="date" name="date">
+    <input type="date" class="form-control" id="pickup_date" name="pickup_date">
   </div>
   <div class="form-group">
     <label for="time">Time</label>
-    <input type="time" class="form-control" name="time" id="time">
+    <input type="time" class="form-control" name="pickup_time" id="pickup_time">
   </div>
 
   <div class="form-group">
@@ -37,7 +37,7 @@
       </label>
     </div>
   </div>
-  <a href="http://rsms.test/paymentoption"><button type="submit" class="btn btn-primary">Proceed to Payment</button>
+  <button type="submit" class="btn btn-primary">Proceed to Payment</button>
 </form>
                 	<!--form end-->
 

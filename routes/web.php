@@ -82,6 +82,24 @@ Route::get('/paymentoption', function () {
 });
 
 
+
+//Delivery
+Route::get('/pickupanddelivery/option', function () {
+    return view('delivery/customer_pickup_delivery_option');
+});
+
+Route::get('/pickup', function () {
+    return view('delivery/customer_pickup_details');
+});
+
+Route::get('/delivery', function () {
+    return view('delivery/customer_delivery_details');
+});
+
+Route::post('submit','PickupController@savetopickup');
+
+Route::post('submit','DeliveryController@savetodelivery');
+
 Route::get('/cod', function () {
     return view('payment/cashondelivery');
 });
@@ -105,3 +123,4 @@ Route::post('/payment/cashondeliveryinsert','StudInsertController@insert');
 Route::get('/success', function () {
     return view('registration/riderHomepage');
 });
+

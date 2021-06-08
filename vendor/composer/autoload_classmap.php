@@ -20,8 +20,13 @@ return array(
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
 
     'App\\Http\\Controllers\\PaymentController' => $baseDir . '/app/Http/Controllers/paymentcontroller.php',
+    'App\\Http\\Controllers\\PickupController' => $baseDir . '/app/Http/Controllers/PickupController.php',
+
 
     'App\\Http\\Controllers\\PaymentController' => $baseDir . '/app/Http/Controllers/paymentcontroller.php',
+
+    'App\\Http\\Controllers\\PaymentController' => $baseDir . '/app/Http/Controllers/paymentcontroller.php',
+
 
     'App\\Http\\Controllers\\RiderController' => $baseDir . '/app/Http/Controllers/RiderController.php',
     'App\\Http\\Controllers\\ServiceController' => $baseDir . '/app/Http/Controllers/ServiceController.php',
@@ -45,7 +50,11 @@ return array(
     'App\\Type' => $baseDir . '/app/Type.php',
     'App\\User' => $baseDir . '/app/User.php',
     'App\\payment' => $baseDir . '/app/payment.php',
+
+    'App\\pickup' => $baseDir . '/app/pickup.php',
+
     'App\\rider' => $baseDir . '/app/rider.php',
+
     'Asm89\\Stack\\Cors' => $vendorDir . '/asm89/stack-cors/src/Cors.php',
     'Asm89\\Stack\\CorsService' => $vendorDir . '/asm89/stack-cors/src/CorsService.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
