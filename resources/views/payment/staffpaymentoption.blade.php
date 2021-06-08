@@ -12,14 +12,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Payment Homepage') }}</div>
+                <div class="card-header">{{ __('Satff Payment Homepage') }}</div>
 
                 <div class="card-body">
 
                 	<center>
 
-                		<a href="http://rsms.test/cod"><button class="btn btn-primary">Cash on Delivery</button></a><br><br>
-                        <a href="http://rsms.test/onlinebanking"><button class="btn btn-primary">Online Payment</button></a><br><br>
+                		<a href="http://rsms.test/payment/customerpaymentlist"><button class="btn btn-primary">Cash on Delivery Details</button></a><br><br>
+                        <a href="http://rsms.test/payment/customerpaymentlist1"><button class="btn btn-primary">Online Banking Details</button></a><br><br>
 
                 	<!--form end-->
 
