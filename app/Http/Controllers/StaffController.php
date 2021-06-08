@@ -93,12 +93,12 @@ class StaffController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($id)
     {
         //delete selected record
-        $users = \App\User::find($id);
-        $users->delete();
+        $user = \App\User::find($id);
+        $user->delete();
 
-        return redirect('/account/customerProfileList')->with('successdelete', 'Service info has been deleted!!');
+        return redirect('/account/customerProfileList')->with('successdelete', 'Customer has been deleted!!');
     }
 }
