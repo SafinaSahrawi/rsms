@@ -19,7 +19,7 @@
                 	<center>
 
                 		<a href="http://rsms.test/cod"><button class="btn btn-primary">Cash on Delivery</button></a><br><br>
-                        <a href="http://rsms.test/cod"><button class="btn btn-primary">Online Payment</button></a><br><br>
+                        <a href="http://rsms.test/onlinebanking"><button class="btn btn-primary">Online Payment</button></a><br><br>
 
                 	<!--form end-->
 
