@@ -27,5 +27,13 @@ class DatabaseSeeder extends Seeder
         $type_repair = Type::where('name', 'repair')->first();
         
         $this->call(TypeTableSeeder:: class);
+
+
+        // $this->call(UserSeeder::class);
+        //Roles comes before User Seeder here
+        $this->call(RoleTableSeeder::class);
+
+        //User seeder will use the roles above created
+        $this->call(UserTableSeeder::class);
     }
 }

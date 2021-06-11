@@ -19,8 +19,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
 // staffHomepage Display
-Route::get('/home', 'StaffController@create')->name('account:staffHomepage');
+// Route::get('/home', 'StaffController@create')->name('account:staffHomepage');
 
 Route::get('/account/staffHomepage','StaffController@create')->name('account:staffHomepage');
 

@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Customer Profile') }}
 
                     @csrf <!-- security token -->
-                    <form method="POST" action="{{ action('StaffController@destroyCustomer', $customer->id) }}">
+                    <form method="POST" action="{{ action('StaffController@destroyCustomer', $user->id) }}">
                         @csrf <!-- security token -->
                         <button class="btn btn-danger float-right" onclick="return confirm('Delete Customer ID: {{ $customer->id }}')">
                             <i class="fa fa-trash"></i>
