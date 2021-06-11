@@ -19,9 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//Display User Homepage based on role type
 Route::get('/home', 'HomeController@index')->name('home');
-// staffHomepage Display
-// Route::get('/home', 'StaffController@create')->name('account:staffHomepage');
+
+
 
 Route::get('/account/staffHomepage','StaffController@create')->name('account:staffHomepage');
 
