@@ -74,6 +74,8 @@
 
                         <?php if(Route::has('register')): ?>
                             <a href="<?php echo e(route('register')); ?>">Register</a>
+                        <?php elseif(Route::has('registercustomer')): ?>
+                        <a href="<?php echo e(route('registercustomer')); ?>">Register Customer</a>
                         <?php endif; ?>
                     <?php endif; ?>
                 </div>

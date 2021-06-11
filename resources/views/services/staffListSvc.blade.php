@@ -20,9 +20,10 @@
                         </div></div> -->
 
                         <div class="card">
-                <div class="card-header">{{ __('List of Services') }}</div>
+                <div class="card-header">{{ __('List of On Going Repair Services') }}</div>
 
-                <!-- customer can view all requested services by their ID -->
+                <!-- staff can view list of In Progress Service -->
+                <!-- then staff can click to go to StaffEditService -->
 
                 <div class="card-body">
 
@@ -43,9 +44,10 @@
 <thead>
     <tr>
         <th>ID</th>
-        <th>Name</th>
         <th>Device Type</th>
         <th>Brand</th>
+        <!-- <th>SerialNo</th> -->
+        <th>Device Faulty</th>
         <th>Status</th>
         <th colspan="2" text-align="center">Action</th>
     </tr>
@@ -55,13 +57,13 @@
 
     <tr>
         <td>{{$service['id']}}</td>
-            @foreach($service->users as $user)
-        <td>{{ $user->name }}</td>
-            @endforeach
         <td>{{$service['deviceType']}}</td>
         <td>{{$service['brand']}}</td>
+        <!-- <td>{{$service['serialNo']}}</td> -->
         <td>{{$service['status']}}</td>
 
+
+            <!-- PLEASE UPDATE CONTROLLER  -->
         <td><a href="{{action('ServiceController@edit', $service['id'])}}" class="btn btn-warning">
                                       <i class="fa fa-edit"></i>
                                   </a></td>

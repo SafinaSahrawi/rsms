@@ -5,36 +5,39 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Services (customer)') }}</div>
+                <div class="card-header">{{ __('CUST - Add New Quotation') }}</div>
 
                 <div class="card-body">
 
-                    <!--form start-->
-                    <form action="{{url('services')}}" method="POST">
-                        @csrf
+<!--                     Customer add new quotation
+                    Then Admin Give Comment & Cost @ editQuotation -->
+
+                	<!--form start-->
+                	<form action="{{url('services')}}" method="POST">
+                		@csrf
 
                         <table style="center">
-                            <div class="column" align="center">
+                            <div class="column">
                         <tr>
                             <th>Username</th>
                             <th>Email</th>
-<!--                             <th>Phone</th> -->
+                            <th>Phone</th>
                         </tr>
+                        
                         <tr>
                         <td><input name="username" value="{{ Auth::user()->name }}" class="form-control" readonly></td>
                         <td><input name="email" type="text" value="{{ Auth::user()->email }}" class="form-control"></td>
-<!--                         <td><input name="phone" type="text" class="form-control"></td> -->
+                        <td><input name="phone" type="text" class="form-control"></td>
                         </tr>
                         </div></table>
 
-                        Device Type
+                		Device Type
                         <select name="deviceType" class="form-control">
                             <option value="cpu">CPU/Personal Computer</option>
                             <option value="laptop">Laptop</option>
                             <option value="monitor">Monitor</option>
                             <option value="hardisk">Hard Disk</option>
                             <option value="not_listed">Others</option>
-<!--                             <input name="deviceType" placeholder="Please State Device Type" class="form-control" type="text" style="display: none" id="inputbox"> -->
                         </select>
 
 
@@ -50,17 +53,14 @@
                             <option value="motherboard">Motherboard</option>
                             <option value="waterDamage">Water Damage</option>
                             <option value="others">Others</option>
-                            
                         </select>
-<!--                         <input name="faulty" placeholder="Please State the Faulty" class="form-control" type="text" style="display: none" id="textboxes"> -->
                         <hr>
-                        
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                		
+                		<button type="submit" class="btn btn-primary">Request</button>
 
                         <button type="submit" class="btn btn-primary">Cancel</button>
-                    </form>
-                    <!--form end-->
-
+                	</form>
+                	<!--form end-->
 
                 </div>
             </div>

@@ -7,36 +7,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
-    <title><?php echo e(config('app.name', 'Laravel')); ?></title>
+    <title>Dercs Computer Repair Services</title>
 
     <!-- Scripts -->
     <script src="<?php echo e(asset('js/app.js')); ?>" defer></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<!--     <script type="text/javascript">
-        function changeDevice() {
-        var deviceBox = document.getElementById("deviceBox");
-        var selectedValue = deviceBox.options[deviceBox.selectedIndex].value;
-        if (selectedValue=="not_listed"){
-        $('#inputbox').show();
-        }
-        else {
-        var selectedValue = deviceBox.options[deviceBox.selectedIndex].value;
-        $('#inputbox').hide();
-        }
-        }
-
-        function changeFunc() {
-        var selectBox = document.getElementById("selectBox");
-        var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-        if (selectedValue=="others"){
-        $('#textboxes').show();
-        }
-        else {
-        $('#textboxes').hide();
-        }
-        }
-    </script> -->
     
 
     <!-- Fonts -->
@@ -74,6 +50,11 @@
                             <?php if(Route::has('register')): ?>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo e(route('register')); ?>"><?php echo e(__('Register')); ?></a>
+                                </li>
+
+                            <?php else: ?>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo e(route('registerCustomer')); ?>"><?php echo e(__('RegisterCustomer')); ?></a>
                                 </li>
                             <?php endif; ?>
                         <?php else: ?>

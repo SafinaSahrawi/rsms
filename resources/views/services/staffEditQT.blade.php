@@ -5,20 +5,19 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('CUST - Edit Quotation') }}</div>
+                <div class="card-header">{{ __('STAFF -Update Quotation Request') }}</div>
 
-<!--                 Customer view quotation updated-->
+<!--                     from createQuotation then Update Customer Quotation Request 
+                    Then Customer can do confirmation at custConfirmRepair -->
+
                 <div class="card-body">
 
-                    <!-- UPDATE CONTROLLER ROUTE -->
-                    <!--form start-->
-                    <form method="post" action="{{action('ServiceController@show', $id)}}">
+                	<!--form start-->
+                    <form method="post" action="{{action('ServiceController@update', $id)}}">
                         @csrf 
                         <input name="_method" type="hidden" value="PATCH">
-
-                        <!-- ID CONTROLLER TO GET VALUE -->
                         <input type="hidden" name="id" value="{{$service['id']}}"> 
-
+                        
                         <label for="id">Service ID:</label> 
                         <input type="text" value="{{$service->id}}" class="form-control" readonly> 
                         
@@ -26,29 +25,33 @@
                         <input type="text" class="form-control" name="name" value="{{ Auth::user()->name }}" readonly> 
                         
                         <label for="deviceType">Device Type</label> 
-                        <input type="text" name="deviceType" class="form-control" value="{{$service->deviceType}}" readonly>
+                        <select name="deviceType" class="form-control" value="{{$service->deviceType}}">
+                            <option value="cpu">CPU/Personal Computer</option>
+                            <option value="laptop">Laptop</option>
+                            <option value="monitor">Monitor</option>
+                            <option value="hardisk">Hard Disk</option>
+                            <option value="not_listed">Others</option>
+                        </select>
                         
                         <label for="brand">Brand</label> 
                         <input type="text" class="form-control" name="brand" value="{{$service->brand}}">
                         
                         <label for="serialNo">Serial Number</label> 
-                        <input type="text" class="form-control" name="serialNo" value="{{$service->serialNo}}" readonly="form-control">
+                        <input type="text" class="form-control" name="serialNo" value="{{$service->serialNo}}">
                         
                         <label for="faulty">Faulty</label>
                         <input type="text" name="faulty" class="form-control" value="{{$service->faulty}}" readonly="form-control">
 
+
                         <label for="comment">Comment</label> 
-                        <input type="text" class="form-control" value="{{$service->comment}}" readonly="form-control">
+                        <input type="text" class="form-control" name="comment">
                         
                         <label for="cost">Repair Cost</label> 
-                        <input type="text" class="form-control" value="{{$service->cost}}" readonly="form-control">
-                        
-                        <!-- add PRINT BUTTON -->
-                        <!-- CLICK BUTTON, GO TO CustConfirmRepair -->
+                        <input type="text" class="form-control" name="cost"> 
 
-                        <hr><button type="submit" class="btn btn-success">Proceed</button>
+                        <hr><button type="submit" class="btn btn-success">Save Update</button>
                     </form>
-                    <!--form end-->
+                	<!--form end-->
 
                 </div>
             </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Service; //include the namespace of Service.php
 
 class ServiceController extends Controller
@@ -17,7 +18,7 @@ class ServiceController extends Controller
     {
         //services/index
 
-        $services  = Service::all()->toArray();
+        $services  = Service::with('users')->get();
         return view ('services.custIndex', compact('services'));
     }
 
@@ -29,7 +30,7 @@ class ServiceController extends Controller
     public function create()
     {
         //display form
-        return view ('services.createQuotation');
+        return view ('services.custCreate');
     }
 
     /**
@@ -44,6 +45,7 @@ class ServiceController extends Controller
         // $service = $this->validate(request(), [
             // 'id'=>'required', 
             // 'name'=> 'required',
+            $id = Auth::id();
             $selectDevice = $request->input('deviceType');
             $brand = $request->input('brand');
             $serialNo = $request->input('serialNo');
@@ -53,7 +55,20 @@ class ServiceController extends Controller
             DB::table('services')->insert($data);
 
         return redirect('/services')->with('success', 'Service has been added');
+
+
+        // 'confirmation' => 'accepted'
+
+
     }
+
+//     public function store(Request $request){
+//         if($request->has('agreement')){
+//             //Checkbox checked
+//         }else{
+//             //Checkbox not checked
+//         }
+// }
 
 
     /**
