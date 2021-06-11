@@ -19,6 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/customerHomepage', 'CustomerController@index')->name('customer')->middleware('customer');
+Route::get('/riderHomepage', 'RiderController@index')->name('rider')->middleware('rider');
+Route::get('/staffHomepage', 'StaffController@index')->name('staff')->middleware('staff');
+
 // staffHomepage Display
 Route::get('/home', 'StaffController@create')->name('account:staffHomepage');
 
@@ -39,17 +43,24 @@ Route::get('/account/riderProfileList','StaffController@indexRider')->name('acco
 
 //customer registration
 //Route::get('/registration/registercustomer','CustomerController@create')->name('registration:registercustomer');
+Route::get('/registration/registercustomer', function () {
+    return view('/registration/registercustomer');
+});
+Route::post('submit','CustomerController@storetocustomer');
+
 
 
 //rider registration
-Route::get('/registerrider', function () {
+
+Route::get('/registration/registerrider', function () {
     return view('registration/registerrider');
 });
-Route::post('submit','RiderController@storetodatabase');
+Route::post('submit','RiderController@storetorider');
 
+Route::get('/registration/riderHomepage', function () {
+    return redirect('/registration/riderHomepage');
+});
 
-// riderHomepage Display
-Route::get('/registration/riderHomepage','RiderController@create')->name('registration:riderHomepage');
 
 
 
@@ -102,6 +113,3 @@ Route::post('/payment/cashondeliveryinsert','StudInsertController@insert');
 
 Route::post('/payment/cashondeliveryinsert','StudInsertController@insert');
 
-Route::get('/success', function () {
-    return view('registration/riderHomepage');
-});

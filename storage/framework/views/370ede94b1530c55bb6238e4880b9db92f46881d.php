@@ -83,8 +83,8 @@
                                 <i class="fa fa-caret-down"></i>
                                 </button>
                                 <div class="dropdown-content">
-                                <a href="<?php echo e(url('registercustomer')); ?>">Sign-up as customer</a>
-                                <a href="<?php echo e(url('registerrider')); ?>">Sign-up as rider</a>
+                                <a href="<?php echo e(url('registration/registercustomer')); ?>">Sign-up as customer</a>
+                                <a href="<?php echo e(url('registration/registerrider')); ?>">Sign-up as rider</a>
                                 </div>
                             </div>
                             

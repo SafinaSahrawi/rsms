@@ -15,7 +15,11 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+       
+        $customer == 1;
+  
+        return view('customerHomepage', compact('customer'));
+
     }
 
     /**
@@ -93,14 +97,15 @@ class CustomerController extends Controller
     function storetocustomer(Request $req)
     {
         // print_r($req->input());
-        $customer = new customer;
+        $customer = new Customer;
         $customer->username= $req->username;
         $customer->fullname= $req->fullname;
         $customer->contact= $req->contact;
         $customer->address= $req->address;
         $customer->password= $req->password;
         $customer->email= $req->email;
-        return redirect('/success');
+        $rider->role= $req->role;
+        return redirect('/registration/customerHomepage');
     }
 
 

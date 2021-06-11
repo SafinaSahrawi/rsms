@@ -15,7 +15,10 @@ class RiderController extends Controller
      */
     public function index()
     {
-        //
+        $role == 2;
+  
+        return view('riderHomepage', compact('customer'));
+       
     }
 
     /**
@@ -85,7 +88,7 @@ class RiderController extends Controller
         //
     }
 
-    function storetodatabase(Request $req)
+    function storetorider(Request $req)
     {
         // print_r($req->input());
         $rider = new rider;
@@ -95,10 +98,11 @@ class RiderController extends Controller
         $rider->address= $req->address;
         $rider->password= $req->password;
         $rider->email= $req->email;
+        $rider->role= $req->role;
         $rider->ic= $req->ic;
         $rider->license_type= $req->license_type;
         $rider->license_exp= $req->license_exp;
-        return redirect('/success');
+        return redirect('/registration/riderHomepage');
     }
     
 }
