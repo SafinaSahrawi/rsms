@@ -126,11 +126,4 @@ Route::get('/staffpaymentoption', function () {
 
 Route::get('/payment/customerpaymentlist','PaymentController@index')->name('payment:customerpaymentlist');
 
-Route::post('/payment/cashondeliveryinsert','StudInsertController@insert');
-
-Route::post('/payment/cashondeliveryinsert','StudInsertController@insert');
-
-Route::get('/success', function () {
-    return view('registration/riderHomepage');
-});
 

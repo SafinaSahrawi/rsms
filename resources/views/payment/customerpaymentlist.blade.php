@@ -33,11 +33,17 @@
                                 <td>{{ $pb->CustomerDeliveryAdd }}</td>
                                 <td>{{ $pb->CustomerContactNum }}</td>
                                 <td>@csrf
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Verify
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
     <button class="dropdown-item" type="button">Paid</button>
     <button class="dropdown-item" type="button">Unpaid</button>
 
-                            </tr>
+  </div>
+</div>
+             </tr>
                             @endforeach
                         </tbody>
                     </table>
