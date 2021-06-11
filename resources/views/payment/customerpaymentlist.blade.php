@@ -22,7 +22,7 @@
                             <th>Payment ID</th>
                             <th>Delivery Address</th>
                             <th>Contact Number</th>
-                            <th>Action</th>
+                            <th>Update</th>
                         </tr>
                         </thead>
 
@@ -33,11 +33,17 @@
                                 <td>{{ $pb->CustomerDeliveryAdd }}</td>
                                 <td>{{ $pb->CustomerContactNum }}</td>
                                 <td>@csrf
-                                      <input name="_method" type="hidden" value="DELETE">
-                                      <button class="btn btn-danger" type="submit">
-                                          <i class="fas fa-trash-alt"></i>
-                                      </button></td>
-                            </tr>
+                                <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Verify
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <button class="dropdown-item" type="button">Paid</button>
+    <button class="dropdown-item" type="button">Unpaid</button>
+
+  </div>
+</div>
+             </tr>
                             @endforeach
                         </tbody>
                     </table>

@@ -40,4 +40,21 @@ class PaymentController extends Controller
 
         return view('payment.customerpaymentlist')->with(compact('payment'));
     }
+
+    public function indexdetails (Request $request)
+    {
+        $payment1 = Payment1::all(); //sql command: SELECT * FORM TABLE....
+
+        return view('payment.customerpaymentlist1')->with(compact('payment1'));
+        
+    }
+
+    public function destroy($id)
+    {
+        //delete selected record
+        $payment1 = \App\Payment1::find($id);
+        $payment1->delete();
+
+        return redirect('/payment/customerpaymentlist1')->with('successdelete', 'Payment deleted info has been deleted!!');
+    }
 }

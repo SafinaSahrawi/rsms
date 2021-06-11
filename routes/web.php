@@ -36,6 +36,11 @@ Route::get('/account/riderProfileList','StaffController@indexRider')->name('acco
 
 
 
+// customerHomepage Display
+//Route::get('/registration/customerHomepage','CustomerController@create')->name('registration:customerHomepage');
+
+//customer registration
+//Route::get('/registration/registercustomer','CustomerController@create')->name('registration:registercustomer');
 
 
 //rider registration
@@ -48,6 +53,12 @@ Route::post('submit','RiderController@storetodatabase');
 // riderHomepage Display
 Route::get('/registration/riderHomepage','RiderController@create')->name('registration:riderHomepage');
 
+
+
+
+// staffHomepage Display
+Route::get('/account/staffHomepage','StaffController@create')->name('account:staffHomepage');
+Route::get('/account/customerProfileList','StaffController@index')->name('account:customerProfileList');
 
 
 //service module
@@ -73,6 +84,24 @@ Route::get('/paymentoption', function () {
 });
 
 
+
+//Delivery
+Route::get('/pickupanddelivery/option', function () {
+    return view('delivery/customer_pickup_delivery_option');
+});
+
+Route::get('/pickup', function () {
+    return view('delivery/customer_pickup_details');
+});
+
+Route::get('/delivery', function () {
+    return view('delivery/customer_delivery_details');
+});
+
+Route::post('submit','PickupController@savetopickup');
+
+Route::post('submit','DeliveryController@savetodelivery');
+
 Route::get('/cod', function () {
     return view('payment/cashondelivery');
 });
@@ -85,12 +114,18 @@ Route::post('submit','PaymentController@savetodatabase');
 
 Route::post('submit','PaymentController@savetodatabase1');
 
+Route::get('/payment/customerpaymentlist','PaymentController@index')->name('payment:customerpaymentlist');
+
+
+Route::get('/payment/customerpaymentlist1','PaymentController@indexdetails')->name('payment:customerpaymentlist1');
+
+Route::post('/payment/customerpaymentlist1','PaymentController@destroy')->name('payment:customerpaymentlist1');
+
+Route::get('/staffpaymentoption', function () {
+    return view('payment/staffpaymentoption');
+});
 
 
 Route::get('/payment/customerpaymentlist','PaymentController@index')->name('payment:customerpaymentlist');
 
-Route::post('/payment/cashondeliveryinsert','StudInsertController@insert');
 
-Route::get('/success', function () {
-    return view('registration/riderHomepage');
-});
