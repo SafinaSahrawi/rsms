@@ -39,18 +39,18 @@
                         </thead>
 
                         <tbody>
-                            @foreach($customers as $customer)
+                            @foreach ($userList as $user)
                             <tr>
-                                <td>{{ $customer->id }}</td>
-                                <td>{{ $customer->username }}</td>
-                                <td>{{ $customer->email }}</td>
+                                <td>{{ $user->id }}</td>
+                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->email }}</td>
 
-                                <td><a class="btn btn-success" href="{{ action('StaffController@showCustomer', $customer->id) }}"><i class="fa fa-list-alt"></i></a>
+                                <td><a class="btn btn-success" href="{{ action('StaffController@showCustomer', $user->id) }}"><i class="fa fa-list-alt"></i></a>
 
                                 <td><!-- form with delete button -->
-                                    <form method="POST" action="{{ action('StaffController@destroyCustomer', $customer->id) }}">
+                                    <form method="POST" action="{{ action('StaffController@destroy', $user->id) }}">
                                         @csrf <!-- security token -->
-                                        <button class="btn btn-danger" onclick="return confirm('Delete Record ID: {{ $customer->id }}')">
+                                        <button class="btn btn-danger" onclick="return confirm('Are you sure?')">
                                         <i class="fa fa-trash"></i>
                                         </button>
                                     </form>
@@ -59,7 +59,7 @@
                         </tr> @endforeach
                         </tbody>
                     </table>
-                    {{$customers->links()}}
+                    
                 </div>
             </div></div>
         </div>

@@ -22,25 +22,17 @@ Auth::routes();
 //Display User Homepage based on role type
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/account/customerProfileList','StaffController@index')->name('account:customerProfileList');
 
+Route::get('/{userList}','StaffController@showCustomer')->name('account:customerProfile');
 
-Route::get('/account/staffHomepage','StaffController@create')->name('account:staffHomepage');
+Route::post('/{customer}/destroy','StaffController@destroy')->name('destroyCustomer'); // delete=destroy
 
-Route::get('/account/customerProfileList','StaffController@indexCustomer')->name('account:customerProfileList');
+Route::get('/account/riderProfileList','StaffController@index')->name('account:riderProfileList');
 
-Route::get('/{customer}','StaffController@showCustomer')->name('account:customerProfile');
-
-Route::post('/{customer}/destroy','StaffController@destroyCustomer')->name('destroyCustomer'); // delete=destroy
 
 Route::get('/account/riderProfileList','StaffController@indexRider')->name('account:StaffProfileList');
 
-
-
-// customerHomepage Display
-//Route::get('/registration/customerHomepage','CustomerController@create')->name('registration:customerHomepage');
-
-//customer registration
-//Route::get('/registration/registercustomer','CustomerController@create')->name('registration:registercustomer');
 
 
 //rider registration

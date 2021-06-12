@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use App\Customer;
 use App\rider;
 
+use App\Role;
+use App\User;
+
 class StaffController extends Controller
 {
     public function __construct(){
@@ -20,22 +23,36 @@ class StaffController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function indexCustomer(Request $request)
+    public function index(Request $request)
     {
         if($request->GET('keyword')!=null)
         {
             //search based on keyword
+            $users =  User::all();
+            $userList = array();
+
+            foreach ($users as $user){
+                if ($user->hasRole('customer')){
+                    $userList[] = $user;
+                }
+            }
             $keyword = $request->GET('keyword');
-            $customers = Customer::where('username','LIKE','%'.$keyword.'%')->GET();
-            $customers = Customer::where('username','LIKE','%'.$keyword.'%')->paginate(10); //data yang akan keluar
+            $userList = User::where('name','LIKE','%'.$keyword.'%')->GET();
+            $userList = User::where('name','LIKE','%'.$keyword.'%')->paginate(10); //data yang akan keluar
         }
         //display all records
         else
         {
-            $customers = Customer::all();
-            $customers = Customer::paginate(10);
+            $users =  User::all();
+            $userList = array();
+
+            foreach ($users as $user){
+                if ($user->hasRole('customer')){
+                $userList[] = $user;
+            }
         }
-        return view('account.customerProfileList')->with(compact('customers')); //call $customers
+    }
+    return view('account.customerProfileList', compact('userList'));
     }
 
     public function indexRider(Request $request)
@@ -87,8 +104,9 @@ class StaffController extends Controller
      */
     public function showCustomer($id)
     {
-        $customer = Customer::find($id);
-        return view('account.customerProfile')->with(compact('customer'));
+        $user = User::find($id);
+
+        return view('/account/customerProfile')->with(compact('user'));
     }
 
     /**
@@ -120,12 +138,12 @@ class StaffController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroyCustomer($id)
+    public function destroy($id)
     {
-        //delete selected record
-        $customer = \App\Customer::find($id);
-        $customer->delete();
 
-        return redirect('/account/customerProfileList')->with('delete', "Customer $id has been deleted!");
+        $user = User::find($id);
+        $user->delete();
+
+        return redirect('/account/customerProfileList')->with('delete','DATA has been DELETED!');
     }
 }
