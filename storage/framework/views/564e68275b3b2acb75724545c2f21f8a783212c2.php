@@ -7,13 +7,13 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
-    <title><?php echo e(config('app.name', 'Laravel')); ?></title>
+    <title>Dercs Computer Repair Service System</title>
 
     <!-- Scripts -->
     <script src="<?php echo e(asset('js/app.js')); ?>" defer></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script type="text/javascript">
+<!--     <script type="text/javascript">
         function changeDevice() {
         var deviceBox = document.getElementById("deviceBox");
         var selectedValue = deviceBox.options[deviceBox.selectedIndex].value;
@@ -21,6 +21,7 @@
         $('#inputbox').show();
         }
         else {
+        var selectedValue = deviceBox.options[deviceBox.selectedIndex].value;
         $('#inputbox').hide();
         }
         }
@@ -35,7 +36,7 @@
         $('#textboxes').hide();
         }
         }
-    </script>
+    </script> -->
     
 
     <!-- Fonts -->
@@ -50,7 +51,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
-                    <?php echo e(config('app.name', 'Laravel')); ?>
+                    <?php echo e(config('app.name', 'RSMS')); ?>
 
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php echo e(__('Toggle navigation')); ?>">
@@ -85,6 +86,13 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                                    <a class="dropdown-item" href="<?php echo e(url('account/staffProfile')); ?>"
+                                       onclick="">
+                                        <?php echo e(__('Profile')); ?>
+
+                                    </a>
+
                                     <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

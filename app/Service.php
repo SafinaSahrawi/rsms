@@ -9,18 +9,10 @@ class Service extends Model
     //Service.php
     //select field involved only
 
-    protected $fillable = ['user_id', 'name', 'deviceType', 'brand', 'serialNo', 'faulty', 'cost'];
+    protected $fillable = ['deviceType', 'brand', 'serialNo', 'faulty', 'cost', 'comment', 'status', 'timestamps'];
 
+    public function users(){
 
-
-    /*public function projectusers() {
-      return $this->hasOne('App\Project', 'user_id', 'id);
-    }*/
-
-    public function types(){
-      return $this->belongsToMany(Type:: class);
-      //file location app/Type.php
+      return $this->belongsToMany(User::class, 'user_service', 'users_id', 'services_id');
     }
-
-
 }

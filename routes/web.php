@@ -56,6 +56,13 @@ Route::get('/account/customerProfileList','StaffController@index')->name('accoun
 //service module
 Route::resource('services','ServiceController');
 
+Route::get('insert','ServiceController@create');
+Route::post('create','ServiceController@store');
+
+Route::get('services/{service}/edit','ServiceController@edit');
+Route::match(['put', 'patch'], 'services/{service}','ServiceController@update');
+
+
 Route::get('riderhome', function () {
     return view('riderHomepage');
 })->middleware('auth', 'checkuser:runner@runner.com');
@@ -96,6 +103,7 @@ Route::post('submit','DeliveryController@savetodelivery');
 
 Route::get('/cod', function () {
     return view('payment/cashondelivery');
+
 });
 
 Route::get('/onlinebanking', function () {
@@ -105,6 +113,7 @@ Route::get('/onlinebanking', function () {
 Route::post('submit','PaymentController@savetodatabase');
 
 Route::post('submit','PaymentController@savetodatabase1');
+
 
 Route::get('/payment/customerpaymentlist','PaymentController@index')->name('payment:customerpaymentlist');
 

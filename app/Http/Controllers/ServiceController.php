@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Service; //include the namespace of Service.php
 
 class ServiceController extends Controller
@@ -16,7 +18,7 @@ class ServiceController extends Controller
     {
         //services/index
 
-        $services  = Service::all()->toArray();
+        $services  = Service::with('users')->get();
         return view ('services.custIndex', compact('services'));
     }
 
@@ -28,7 +30,7 @@ class ServiceController extends Controller
     public function create()
     {
         //display form
-        return view ('services.createService');
+        return view ('services.custCreate');
     }
 
     /**
@@ -40,20 +42,34 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         //insert new record process 
-        $service = $this->validate(request(), [
-            'user_id'=>'required', 
-            'name'=> 'required',
-            'deviceType' => 'required',
-            'brand' => 'required',
-            'serialNo'  => 'required',
-            'faulty'  => 'required',
-            'cost' => 'required'
-        ]);
+        // $service = $this->validate(request(), [
+            // 'id'=>'required', 
+            // 'name'=> 'required',
+            $id = Auth::id();
+            $selectDevice = $request->input('deviceType');
+            $brand = $request->input('brand');
+            $serialNo = $request->input('serialNo');
+            $selectFaulty = $request->input('faulty');
+            $data = array('deviceType' => $selectDevice,'brand' => $brand, 'serialNo' => $serialNo, 'faulty' => $selectFaulty);
 
-        Service::create($service);
+            DB::table('services')->insert($data);
 
-        return back()->with('success', 'Service has been added');
+        return redirect('/services')->with('success', 'Service has been added');
+
+
+        // 'confirmation' => 'accepted'
+
+
     }
+
+//     public function store(Request $request){
+//         if($request->has('agreement')){
+//             //Checkbox checked
+//         }else{
+//             //Checkbox not checked
+//         }
+// }
+
 
     /**
      * Display the specified resource.
@@ -92,11 +108,19 @@ class ServiceController extends Controller
         //
         //save updated data 
         $data = $this->validate($request,
-        [ 'user_id'=>'required', 'name'=> 'required', 'deviceType'=> 'required' ]);
-        $data['id'] = $id; $service = Service::find($id); 
-        $service->user_id=$request->get('user_id'); 
-        $service->name=$request->get('name'); 
-        $service->deviceType=$request->get('deviceType'); 
+        ['deviceType'=> 'required', 
+            'brand' => 'required',
+            'serialNo'  => 'required',
+            'faulty'  => 'required' ]);
+
+        $data['id'] = $id; 
+
+        $service = Service::find($id); 
+        $service->id=$request->get('id'); 
+        $service->deviceType=$request->get('deviceType');
+        $service->brand=$request->get('brand'); 
+        $service->serialNo=$request->get('serialNo'); 
+        $service->faulty=$request->get('faulty');  
         $service->save(); 
 
         return redirect('/services')->with('success', 'Service info has been updated!!');

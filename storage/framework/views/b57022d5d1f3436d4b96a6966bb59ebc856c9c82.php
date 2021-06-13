@@ -8,6 +8,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+        
 
         <!-- Styles -->
         <style>
@@ -59,10 +61,12 @@
             }
 
             .m-b-md {
-                margin-bottom: 30px;
+                margin-bottom: 5px;
             }
+
         </style>
     </head>
+    
     <body>
         <div class="flex-center position-ref full-height">
             <?php if(Route::has('login')): ?>
@@ -73,18 +77,32 @@
                         <a href="<?php echo e(route('login')); ?>">Login</a>
 
                         <?php if(Route::has('register')): ?>
-                            <a href="<?php echo e(route('register')); ?>">Register</a>
+                           
+                            <div class="dropdown">
+                                <button class="dropbtn">Create account
+                                <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="dropdown-content">
+                                <a href="<?php echo e(url('registercustomer')); ?>">Sign-up as customer</a>
+                                <a href="<?php echo e(url('registerrider')); ?>">Sign-up as rider</a>
+                                </div>
+                            </div>
+                            
+
                         <?php endif; ?>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
 
             <div class="content">
-                <div class="title m-b-md">
-                    RSMS Laravel Testingggg
-                </div>
+                
+                <div class="title">RSMS</div>
 
-                <div class="links">
+                <h2>Repair Service Management System</h2>
+                
+                <div><img src="images/1.jpg"></div>
+
+                <!-- <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
@@ -93,9 +111,8 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                </div> -->
             </div>
         </div>
     </body>
-</html>
-<?php /**PATH F:\laragon\www\rsms\resources\views/welcome.blade.php ENDPATH**/ ?>
+    </html><?php /**PATH F:\laragon\www\rsms\resources\views/welcome.blade.php ENDPATH**/ ?>

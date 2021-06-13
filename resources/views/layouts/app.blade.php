@@ -7,13 +7,13 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Dercs Computer Repair Service System</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script type="text/javascript">
+<!--     <script type="text/javascript">
         function changeDevice() {
         var deviceBox = document.getElementById("deviceBox");
         var selectedValue = deviceBox.options[deviceBox.selectedIndex].value;
@@ -21,6 +21,7 @@
         $('#inputbox').show();
         }
         else {
+        var selectedValue = deviceBox.options[deviceBox.selectedIndex].value;
         $('#inputbox').hide();
         }
         }
@@ -35,7 +36,7 @@
         $('#textboxes').hide();
         }
         }
-    </script>
+    </script> -->
     
 
     <!-- Fonts -->

@@ -1,7 +1,7 @@
 <?php return array (
   'app' => 
   array (
-    'name' => 'Laravel',
+    'name' => 'RSMS',
     'env' => 'local',
     'debug' => true,
     'url' => 'http://localhost',
@@ -177,7 +177,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\laragon\\www\\rsms\\storage\\framework/cache/data',
+        'path' => 'F:\\laragon\\www\\rsms\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -216,7 +216,7 @@
         'endpoint' => NULL,
       ),
     ),
-    'prefix' => 'laravel_cache',
+    'prefix' => 'rsms_cache',
   ),
   'cors' => 
   array (
@@ -314,7 +314,7 @@
       'options' => 
       array (
         'cluster' => 'redis',
-        'prefix' => 'laravel_database_',
+        'prefix' => 'rsms_database_',
       ),
       'default' => 
       array (
@@ -343,12 +343,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\laragon\\www\\rsms\\storage\\app',
+        'root' => 'F:\\laragon\\www\\rsms\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\laragon\\www\\rsms\\storage\\app/public',
+        'root' => 'F:\\laragon\\www\\rsms\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -365,7 +365,7 @@
     ),
     'links' => 
     array (
-      'C:\\laragon\\www\\rsms\\public\\storage' => 'C:\\laragon\\www\\rsms\\storage\\app/public',
+      'F:\\laragon\\www\\rsms\\public\\storage' => 'F:\\laragon\\www\\rsms\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -399,13 +399,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\laragon\\www\\rsms\\storage\\logs/laravel.log',
+        'path' => 'F:\\laragon\\www\\rsms\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\laragon\\www\\rsms\\storage\\logs/laravel.log',
+        'path' => 'F:\\laragon\\www\\rsms\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -455,7 +455,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'C:\\laragon\\www\\rsms\\storage\\logs/laravel.log',
+        'path' => 'F:\\laragon\\www\\rsms\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -505,14 +505,14 @@
     'from' => 
     array (
       'address' => NULL,
-      'name' => 'Laravel',
+      'name' => 'RSMS',
     ),
     'markdown' => 
     array (
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\laragon\\www\\rsms\\resources\\views/vendor/mail',
+        0 => 'F:\\laragon\\www\\rsms\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -591,7 +591,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\laragon\\www\\rsms\\storage\\framework/sessions',
+    'files' => 'F:\\laragon\\www\\rsms\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -600,7 +600,7 @@
       0 => 2,
       1 => 100,
     ),
-    'cookie' => 'laravel_session',
+    'cookie' => 'rsms_session',
     'path' => '/',
     'domain' => NULL,
     'secure' => NULL,
@@ -611,9 +611,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\laragon\\www\\rsms\\resources\\views',
+      0 => 'F:\\laragon\\www\\rsms\\resources\\views',
     ),
-    'compiled' => 'C:\\laragon\\www\\rsms\\storage\\framework\\views',
+    'compiled' => 'F:\\laragon\\www\\rsms\\storage\\framework\\views',
   ),
   'flare' => 
   array (

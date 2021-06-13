@@ -37,6 +37,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function services(){
+
+      return $this->belongsToMany(Service::class, 'user_service', 'users_id', 'services_id');
+  }
+
     public function roles() {
         return $this ->belongsToMany(Role::class);
     }
@@ -56,5 +61,6 @@ class User extends Authenticatable
     public function hasRole($role)
     {
         return null !== $this->roles()->where('name', $role)->first();
+
     }
 }

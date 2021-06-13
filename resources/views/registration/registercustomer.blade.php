@@ -8,11 +8,19 @@
                 <div class="card-header">{{ __('RSMS | Customer registration') }}</div>
 
                 <div class="card-body">
+<<<<<<< HEAD:resources/views/auth/registercustomer.blade.php
+                    <form method="POST" action="{{ route('registerCustomer') }}">
+                        @csrf
+
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('xxxxxx') }}</label>
+=======
                     <form method="post" action="submit">
                         @csrf
 
                         <div class="form-group row">
                             <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
+>>>>>>> origin/Account:resources/views/registration/registercustomer.blade.php
 
                             <div class="col-md-6">
                                 <input id="username" type="text" class="form-control @error('name') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
@@ -26,6 +34,9 @@
                         </div>
 
                         <div class="form-group row">
+<<<<<<< HEAD:resources/views/auth/registercustomer.blade.php
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-xxxxx Address') }}</label>
+=======
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
@@ -49,6 +60,7 @@
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+>>>>>>> origin/Account:resources/views/registration/registercustomer.blade.php
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
