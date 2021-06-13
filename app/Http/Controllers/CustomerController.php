@@ -16,9 +16,7 @@ class CustomerController extends Controller
     public function index()
     {
        
-        $customer == 1;
-  
-        return view('customerHomepage', compact('customer'));
+      
 
     }
 
@@ -104,8 +102,7 @@ class CustomerController extends Controller
         $customer->address= $req->address;
         $customer->password= $req->password;
         $customer->email= $req->email;
-        $rider->role= $req->role;
-        return redirect('/registration/customerHomepage');
+        echo $customer->save();
     }
 
 

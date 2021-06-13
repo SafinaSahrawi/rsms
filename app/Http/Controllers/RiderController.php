@@ -15,9 +15,7 @@ class RiderController extends Controller
      */
     public function index()
     {
-        $role == 2;
-  
-        return view('riderHomepage', compact('customer'));
+       
        
     }
 
@@ -29,7 +27,7 @@ class RiderController extends Controller
     public function create()
     {
         //Display riderHomepage
-        return view('registration.registerrider'); //riderHomepage.blade.php
+        return view('registration.riderHomepage'); //riderHomepage.blade.php
     }
 
     /**
@@ -98,11 +96,10 @@ class RiderController extends Controller
         $rider->address= $req->address;
         $rider->password= $req->password;
         $rider->email= $req->email;
-        $rider->role= $req->role;
         $rider->ic= $req->ic;
         $rider->license_type= $req->license_type;
         $rider->license_exp= $req->license_exp;
-        return redirect('/registration/riderHomepage');
+        echo $rider->save();
     }
     
 }

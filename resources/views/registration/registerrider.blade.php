@@ -149,7 +149,15 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                    {{ __('Submit') }}
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-info" style="float: right; width:70px;">
+                                    {{ __('Cancel') }}
                                 </button>
                             </div>
                         </div>

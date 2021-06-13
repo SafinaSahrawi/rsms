@@ -38,16 +38,22 @@ Route::get('/account/riderProfileList','StaffController@indexRider')->name('acco
 
 
 
-// customerHomepage Display
-//Route::get('/registration/customerHomepage','CustomerController@create')->name('registration:customerHomepage');
-
 //customer registration
-//Route::get('/registration/registercustomer','CustomerController@create')->name('registration:registercustomer');
 Route::get('/registration/registercustomer', function () {
-    return view('/registration/registercustomer');
+    return view('registration/registercustomer');
 });
 Route::post('submit','CustomerController@storetocustomer');
+Route::post('submit','CustomerController@index');
 
+
+// customerHomepage Display
+Route::get('/registration/customerHomepage', function () {
+    return redirect('/registration/customerHomepage');
+});
+
+Route::get('/welcome', function () {
+    return redirect('/welcome');
+});
 
 
 //rider registration
@@ -56,6 +62,7 @@ Route::get('/registration/registerrider', function () {
     return view('registration/registerrider');
 });
 Route::post('submit','RiderController@storetorider');
+Route::post('submit','RiderController@index');
 
 Route::get('/registration/riderHomepage', function () {
     return redirect('/registration/riderHomepage');
