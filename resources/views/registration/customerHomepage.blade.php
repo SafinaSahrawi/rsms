@@ -11,6 +11,12 @@
 
                 	<center>
 
+                    @isset($message)
+                    <div class="alert alert-success">
+                    <strong>{{$message}}</strong>
+                    </div>
+                    @endif
+
                 		<a href=""><button class="btn btn-primary">View Profile</button></a><br><br>
 
                 		<a href="http://rsms.test/services"><button class="btn btn-primary">Services</button></a><br><br>

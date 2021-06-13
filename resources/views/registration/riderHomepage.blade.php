@@ -11,6 +11,12 @@
 
                 	<center>
 
+                    @isset($message)
+                    <div class="alert alert-success">
+                    <strong>{{$message}}</strong>
+                    </div>
+                    @endif
+
                 	<!--form start-->
                 	<form action="{{ action('RiderController@create')}}" method="POST">
 
