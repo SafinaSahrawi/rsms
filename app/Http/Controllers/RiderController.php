@@ -99,7 +99,9 @@ class RiderController extends Controller
         $rider->ic= $req->ic;
         $rider->license_type= $req->license_type;
         $rider->license_exp= $req->license_exp;
+        $message="Registered successfully";
         echo $rider->save();
+        return Redirect::to('registration.riderHomepage',compact('message'));
     }
     
 }

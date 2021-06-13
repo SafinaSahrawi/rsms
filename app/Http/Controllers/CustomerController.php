@@ -102,7 +102,9 @@ class CustomerController extends Controller
         $customer->address= $req->address;
         $customer->password= $req->password;
         $customer->email= $req->email;
+        $message="Registered successfully";
         echo $customer->save();
+        return Redirect::to('registration.customerHomepage',compact('message'));
     }
 
 
