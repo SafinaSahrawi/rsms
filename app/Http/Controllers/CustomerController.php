@@ -15,7 +15,9 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+       
+      
+
     }
 
     /**
@@ -93,14 +95,16 @@ class CustomerController extends Controller
     function storetocustomer(Request $req)
     {
         // print_r($req->input());
-        $customer = new customer;
+        $customer = new Customer;
         $customer->username= $req->username;
         $customer->fullname= $req->fullname;
         $customer->contact= $req->contact;
         $customer->address= $req->address;
         $customer->password= $req->password;
         $customer->email= $req->email;
-        return redirect('/success');
+        $message="Registered successfully";
+        echo $customer->save();
+        return Redirect::to('registration.customerHomepage',compact('message'));
     }
 
 

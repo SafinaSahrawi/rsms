@@ -1,5 +1,6 @@
 
 
+
 <?php $__env->startSection('content'); ?>
 <div class="container">
     <div class="row justify-content-center">
@@ -169,6 +170,8 @@ unset($__errorArgs, $__bag); ?>
 
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                     <a class="dropdown-item" href="#">customer</a>
+                                    <a class="dropdown-item" href="#">rider</a>
+                                    
                                 </div>
                             </div>
                             </div>

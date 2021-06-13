@@ -83,8 +83,8 @@
                                 <i class="fa fa-caret-down"></i>
                                 </button>
                                 <div class="dropdown-content">
-                                <a href="{{ url('registercustomer') }}">Sign-up as customer</a>
-                                <a href="{{ url('registerrider') }}">Sign-up as rider</a>
+                                <a href="{{ url('/registercustomer') }}">Sign-up as customer</a>
+                                <a href="{{ url('/registerrider') }}">Sign-up as rider</a>
                                 </div>
                             </div>
                             

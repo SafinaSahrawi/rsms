@@ -19,8 +19,20 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
 //Display User Homepage based on role type
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/customerHomepage', 'CustomerController@index')->name('customer')->middleware('customer');
+Route::get('/riderHomepage', 'RiderController@index')->name('rider')->middleware('rider');
+Route::get('/staffHomepage', 'StaffController@index')->name('staff')->middleware('staff');
+
+// staffHomepage Display
+Route::get('/home', 'StaffController@create')->name('account:staffHomepage');
+
+Route::get('/account/staffHomepage','StaffController@create')->name('account:staffHomepage');
+
+Route::get('/account/customerProfileList','StaffController@indexCustomer')->name('account:customerProfileList');
+
 
 Route::get('/account/customerProfileList','StaffController@index')->name('account:customerProfileList');
 
@@ -31,19 +43,40 @@ Route::post('/{customer}/destroy','StaffController@destroy')->name('destroyCusto
 Route::get('/account/riderProfileList','StaffController@index')->name('account:riderProfileList');
 
 
+
 Route::get('/account/riderProfileList','StaffController@indexRider')->name('account:StaffProfileList');
+
+
+//customer registration
+Route::get('/registration/registercustomer', function () {
+    return view('registration/registercustomer');
+});
+Route::post('submit','CustomerController@storetocustomer');
+Route::post('submit','CustomerController@index');
+
+
+// customerHomepage Display
+Route::get('/registration/customerHomepage', function () {
+    return redirect('/registration/customerHomepage');
+});
+
+Route::get('/welcome', function () {
+    return redirect('/welcome');
+});
 
 
 
 //rider registration
-Route::get('/registerrider', function () {
+
+Route::get('/registration/registerrider', function () {
     return view('registration/registerrider');
 });
-Route::post('submit','RiderController@storetodatabase');
+Route::post('submit','RiderController@storetorider');
+Route::post('submit','RiderController@index');
 
-
-// riderHomepage Display
-Route::get('/registration/riderHomepage','RiderController@create')->name('registration:riderHomepage');
+Route::get('/registration/riderHomepage', function () {
+    return redirect('/registration/riderHomepage');
+});
 
 
 
