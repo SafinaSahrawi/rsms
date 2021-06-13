@@ -40,6 +40,7 @@ class User extends Authenticatable
     public function services(){
 
       return $this->belongsToMany(Service::class, 'user_service', 'users_id', 'services_id');
+  }
 
     public function roles() {
         return $this ->belongsToMany(Role::class);

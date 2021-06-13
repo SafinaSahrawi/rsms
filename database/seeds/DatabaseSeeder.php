@@ -37,19 +37,19 @@ class DatabaseSeeder extends Seeder
         //     ]);
 
 
-            DB::table('services')->insert([
-            'name' => 'Safina',
-            'deviceType' => 'laptop',
-            'brand' => 'acer',
-            'serialNo'  => 'abc12345',
-            'faulty'  => 'screen problem',
-            'cost' => '135'
-            ]);
+            // DB::table('services')->insert([
+            // 'name' => 'Safina',
+            // 'deviceType' => 'laptop',
+            // 'brand' => 'acer',
+            // 'serialNo'  => 'abc12345',
+            // 'faulty'  => 'screen problem',
+            // 'cost' => '135'
+            // ]);
 
-        $type_quotation = Type::where('name', 'quotation')->first();
-        $type_repair = Type::where('name', 'repair')->first();
+        // $type_quotation = Type::where('name', 'quotation')->first();
+        // $type_repair = Type::where('name', 'repair')->first();
         
-        $this->call(TypeTableSeeder:: class);
+        // $this->call(TypeTableSeeder:: class);
 
 
         // $this->call(UserSeeder::class);
