@@ -89,11 +89,11 @@ Route::get('/pickupanddelivery/option', function () {
     return view('delivery/customer_pickup_delivery_option');
 });
 
-Route::get('/pickup', function () {
+Route::get('/delivery/pickup', function () {
     return view('delivery/customer_pickup_details');
 });
 
-Route::get('/delivery', function () {
+Route::get('/delivery/delivery', function () {
     return view('delivery/customer_delivery_details');
 });
 
